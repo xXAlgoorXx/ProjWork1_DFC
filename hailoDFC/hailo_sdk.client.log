@@ -1,0 +1,855 @@
+2024-10-09 11:31:50,236 - INFO - __init__.py:84 - First time Hailo Dataflow Compiler is being used. Checking system requirements... (this might take a few seconds)
+2024-10-09 11:31:51,005 - INFO - main.py:34 - Current Time: 11:31:51, 10/09/24
+2024-10-09 11:31:52,013 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.6%
+2024-10-09 11:31:52,014 - INFO - main.py:50 - Memory: Total: 31GB, Available: 24GB
+2024-10-09 11:31:52,014 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-09 11:31:52,014 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-09 11:31:52,029 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-09 11:31:52,032 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-09 11:31:52,033 - INFO - main.py:109 - Running `hailo -h`
+2024-10-09 11:33:52,582 - INFO - main.py:34 - Current Time: 11:33:52, 10/09/24
+2024-10-09 11:33:53,590 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.1%
+2024-10-09 11:33:53,591 - INFO - main.py:50 - Memory: Total: 31GB, Available: 25GB
+2024-10-09 11:33:53,591 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-09 11:33:53,592 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-09 11:33:53,603 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-09 11:33:53,606 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-09 11:33:53,606 - INFO - main.py:109 - Running `hailo tutorial`
+2024-10-09 13:29:48,100 - INFO - main.py:34 - Current Time: 13:29:48, 10/09/24
+2024-10-09 13:29:49,107 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.1%
+2024-10-09 13:29:49,108 - INFO - main.py:50 - Memory: Total: 31GB, Available: 24GB
+2024-10-09 13:29:49,108 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-09 13:29:49,109 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-09 13:29:49,120 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-09 13:29:49,125 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-09 13:29:49,125 - INFO - main.py:109 - Running `hailo tutorial`
+2024-10-14 08:34:57,861 - INFO - main.py:34 - Current Time: 08:34:57, 10/14/24
+2024-10-14 08:34:58,872 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 0.5%
+2024-10-14 08:34:58,873 - INFO - main.py:50 - Memory: Total: 31GB, Available: 24GB
+2024-10-14 08:34:58,874 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 08:34:58,874 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 08:34:58,887 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 08:34:58,892 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 08:34:58,892 - INFO - main.py:109 - Running `hailo tutorial`
+2024-10-14 09:02:06,990 - INFO - main.py:34 - Current Time: 09:02:06, 10/14/24
+2024-10-14 09:02:07,998 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.2%
+2024-10-14 09:02:07,999 - INFO - main.py:50 - Memory: Total: 31GB, Available: 23GB
+2024-10-14 09:02:08,000 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 09:02:08,000 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 09:02:08,016 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 09:02:08,020 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 09:02:08,020 - INFO - main.py:109 - Running `hailo parser onnx --help`
+2024-10-14 09:25:54,599 - INFO - main.py:34 - Current Time: 09:25:54, 10/14/24
+2024-10-14 09:25:55,610 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 0.9%
+2024-10-14 09:25:55,611 - INFO - main.py:50 - Memory: Total: 31GB, Available: 22GB
+2024-10-14 09:25:55,611 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 09:25:55,611 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 09:25:55,617 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 09:25:55,620 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 09:25:55,620 - INFO - main.py:109 - Running `hailo parser onnx --net-name testONNX --hw-arch hailo8l -y --parsing-report-path /ParsingReport/parsingreport.txt /models/mlp.onnx`
+2024-10-14 09:25:55,632 - INFO - parser.py:158 - Translation started on ONNX model testONNX
+2024-10-14 09:26:25,569 - INFO - main.py:34 - Current Time: 09:26:25, 10/14/24
+2024-10-14 09:26:26,580 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.4%
+2024-10-14 09:26:26,581 - INFO - main.py:50 - Memory: Total: 31GB, Available: 22GB
+2024-10-14 09:26:26,581 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 09:26:26,581 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 09:26:26,597 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 09:26:26,600 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 09:26:26,600 - INFO - main.py:109 - Running `hailo parser onnx --net-name testONNX --hw-arch hailo8l -y --parsing-report-path /ParsingReport/parsingreport.txt models/mlp.onnx`
+2024-10-14 09:26:26,611 - INFO - parser.py:158 - Translation started on ONNX model testONNX
+2024-10-14 09:26:27,082 - INFO - parser.py:193 - Restored ONNX model testONNX (completion time: 00:00:00.47)
+2024-10-14 09:26:27,921 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.31)
+2024-10-14 09:26:28,194 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 09:26:28,877 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.27)
+2024-10-14 09:26:28,899 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 09:27:03,239 - INFO - main.py:34 - Current Time: 09:27:03, 10/14/24
+2024-10-14 09:27:04,245 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.3%
+2024-10-14 09:27:04,245 - INFO - main.py:50 - Memory: Total: 31GB, Available: 22GB
+2024-10-14 09:27:04,245 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 09:27:04,246 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 09:27:04,255 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 09:27:04,258 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 09:27:04,258 - INFO - main.py:109 - Running `hailo parser onnx --help`
+2024-10-14 09:27:44,813 - INFO - main.py:34 - Current Time: 09:27:44, 10/14/24
+2024-10-14 09:27:45,825 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.1%
+2024-10-14 09:27:45,826 - INFO - main.py:50 - Memory: Total: 31GB, Available: 22GB
+2024-10-14 09:27:45,826 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 09:27:45,826 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 09:27:45,837 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 09:27:45,840 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 09:27:45,840 - INFO - main.py:109 - Running `hailo parser onnx --net-name testONNX --har-path Harfiles --hw-arch hailo8l -y --parsing-report-path /ParsingReport/parsingreport.txt models/mlp.onnx`
+2024-10-14 09:27:45,853 - INFO - parser.py:158 - Translation started on ONNX model testONNX
+2024-10-14 09:27:46,348 - INFO - parser.py:193 - Restored ONNX model testONNX (completion time: 00:00:00.50)
+2024-10-14 09:27:47,190 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.34)
+2024-10-14 09:27:47,406 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 09:27:48,091 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.24)
+2024-10-14 09:27:48,114 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 09:35:53,211 - INFO - main.py:34 - Current Time: 09:35:53, 10/14/24
+2024-10-14 09:35:54,221 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.0%
+2024-10-14 09:35:54,222 - INFO - main.py:50 - Memory: Total: 31GB, Available: 23GB
+2024-10-14 09:35:54,222 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 09:35:54,222 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 09:35:54,240 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 09:35:54,244 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 09:35:54,244 - INFO - main.py:109 - Running `hailo tutorial`
+2024-10-14 09:37:24,634 - INFO - main.py:34 - Current Time: 09:37:24, 10/14/24
+2024-10-14 09:37:25,644 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.1%
+2024-10-14 09:37:25,645 - INFO - main.py:50 - Memory: Total: 31GB, Available: 23GB
+2024-10-14 09:37:25,645 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 09:37:25,645 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 09:37:25,657 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 09:37:25,661 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 09:37:25,661 - INFO - main.py:109 - Running `hailo parser onnx --net-name testONNX --har-path Harfiles --hw-arch hailo8l -y --parsing-report-path /ParsingReport/parsingreport.txt models/mlp.onnx`
+2024-10-14 09:37:25,675 - INFO - parser.py:158 - Translation started on ONNX model testONNX
+2024-10-14 09:37:26,189 - INFO - parser.py:193 - Restored ONNX model testONNX (completion time: 00:00:00.51)
+2024-10-14 09:37:27,044 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.37)
+2024-10-14 09:37:27,261 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 09:37:27,953 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.28)
+2024-10-14 09:37:27,975 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 09:37:45,893 - INFO - main.py:34 - Current Time: 09:37:45, 10/14/24
+2024-10-14 09:37:46,905 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.0%
+2024-10-14 09:37:46,906 - INFO - main.py:50 - Memory: Total: 31GB, Available: 23GB
+2024-10-14 09:37:46,906 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 09:37:46,906 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 09:37:46,918 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 09:37:46,922 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 09:37:46,922 - INFO - main.py:109 - Running `hailo parser --hrlp`
+2024-10-14 09:37:55,125 - INFO - main.py:34 - Current Time: 09:37:55, 10/14/24
+2024-10-14 09:37:56,136 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.4%
+2024-10-14 09:37:56,136 - INFO - main.py:50 - Memory: Total: 31GB, Available: 24GB
+2024-10-14 09:37:56,136 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 09:37:56,136 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 09:37:56,145 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 09:37:56,148 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 09:37:56,149 - INFO - main.py:109 - Running `hailo parser --help`
+2024-10-14 09:38:05,238 - INFO - main.py:34 - Current Time: 09:38:05, 10/14/24
+2024-10-14 09:38:06,249 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.0%
+2024-10-14 09:38:06,250 - INFO - main.py:50 - Memory: Total: 31GB, Available: 24GB
+2024-10-14 09:38:06,250 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 09:38:06,250 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 09:38:06,269 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 09:38:06,273 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 09:38:06,273 - INFO - main.py:109 - Running `hailo parser --help onnx`
+2024-10-14 09:38:17,321 - INFO - main.py:34 - Current Time: 09:38:17, 10/14/24
+2024-10-14 09:38:18,330 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 0.7%
+2024-10-14 09:38:18,331 - INFO - main.py:50 - Memory: Total: 31GB, Available: 24GB
+2024-10-14 09:38:18,332 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 09:38:18,332 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 09:38:18,344 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 09:38:18,347 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 09:38:18,347 - INFO - main.py:109 - Running `hailo parser onnx --help`
+2024-10-14 09:39:41,430 - INFO - main.py:34 - Current Time: 09:39:41, 10/14/24
+2024-10-14 09:39:42,441 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.5%
+2024-10-14 09:39:42,442 - INFO - main.py:50 - Memory: Total: 31GB, Available: 24GB
+2024-10-14 09:39:42,442 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 09:39:42,442 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 09:39:42,451 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 09:39:42,454 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 09:39:42,454 - INFO - main.py:109 - Running `hailo parser onnx --net-name testONNX --har-path Harfiles --hw-arch hailo8l -y --parsing-report-path /ParsingReport/parsingreport.txt models/mlp.onnx --input-format NCHW [1,3,224,224]`
+2024-10-14 09:39:54,597 - INFO - main.py:34 - Current Time: 09:39:54, 10/14/24
+2024-10-14 09:39:55,605 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.1%
+2024-10-14 09:39:55,606 - INFO - main.py:50 - Memory: Total: 31GB, Available: 24GB
+2024-10-14 09:39:55,606 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 09:39:55,607 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 09:39:55,624 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 09:39:55,628 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 09:39:55,628 - INFO - main.py:109 - Running `hailo parser onnx --help`
+2024-10-14 09:40:53,319 - INFO - main.py:34 - Current Time: 09:40:53, 10/14/24
+2024-10-14 09:40:54,327 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.1%
+2024-10-14 09:40:54,328 - INFO - main.py:50 - Memory: Total: 31GB, Available: 24GB
+2024-10-14 09:40:54,328 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 09:40:54,328 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 09:40:54,346 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 09:40:54,351 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 09:40:54,351 - INFO - main.py:109 - Running `hailo parser onnx --net-name testONNX --har-path Harfiles --hw-arch hailo8l -y --parsing-report-path /ParsingReport/parsingreport.txt models/mlp.onnx --input-format batch=1 channels=3 height=224 width=224`
+2024-10-14 09:41:18,656 - INFO - main.py:34 - Current Time: 09:41:18, 10/14/24
+2024-10-14 09:41:19,667 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 0.9%
+2024-10-14 09:41:19,667 - INFO - main.py:50 - Memory: Total: 31GB, Available: 24GB
+2024-10-14 09:41:19,668 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 09:41:19,668 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 09:41:19,680 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 09:41:19,682 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 09:41:19,682 - INFO - main.py:109 - Running `hailo tutorial`
+2024-10-14 09:44:58,940 - INFO - main.py:34 - Current Time: 09:44:58, 10/14/24
+2024-10-14 09:44:59,950 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.0%
+2024-10-14 09:44:59,951 - INFO - main.py:50 - Memory: Total: 31GB, Available: 23GB
+2024-10-14 09:44:59,951 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 09:44:59,952 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 09:44:59,963 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 09:44:59,967 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 09:44:59,967 - INFO - main.py:109 - Running `hailo parser onnx --net-name testONNX --har-path Harfiles --hw-arch hailo8l -y --parsing-report-path /ParsingReport/parsingreport.txt --input-format batch=1 channels=3 height=224 width=224 models/mlp.onnx`
+2024-10-14 10:09:35,580 - INFO - main.py:34 - Current Time: 10:09:35, 10/14/24
+2024-10-14 10:09:36,591 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 3.3%
+2024-10-14 10:09:36,592 - INFO - main.py:50 - Memory: Total: 31GB, Available: 23GB
+2024-10-14 10:09:36,592 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 10:09:36,592 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 10:09:36,616 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 10:09:36,622 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 10:09:36,622 - INFO - main.py:109 - Running `hailo tutorial`
+2024-10-14 10:13:03,925 - INFO - parser.py:158 - Translation started on ONNX model mlpTest
+2024-10-14 10:13:04,422 - INFO - parser.py:193 - Restored ONNX model mlpTest (completion time: 00:00:00.50)
+2024-10-14 10:13:05,365 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.44)
+2024-10-14 10:13:05,582 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 10:13:06,271 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.35)
+2024-10-14 10:13:06,293 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 10:15:44,792 - INFO - main.py:34 - Current Time: 10:15:44, 10/14/24
+2024-10-14 10:15:45,802 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.4%
+2024-10-14 10:15:45,803 - INFO - main.py:50 - Memory: Total: 31GB, Available: 24GB
+2024-10-14 10:15:45,803 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 10:15:45,803 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 10:15:45,815 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 10:15:45,818 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 10:15:45,818 - INFO - main.py:109 - Running `hailo tutorial`
+2024-10-14 10:19:37,737 - INFO - parser.py:158 - Translation started on ONNX model mlpTest
+2024-10-14 10:19:38,231 - INFO - parser.py:193 - Restored ONNX model mlpTest (completion time: 00:00:00.49)
+2024-10-14 10:19:39,187 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.45)
+2024-10-14 10:19:39,598 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 10:19:40,300 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.56)
+2024-10-14 10:19:40,324 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 10:21:58,208 - INFO - parser.py:158 - Translation started on ONNX model mlpTest
+2024-10-14 10:21:58,705 - INFO - parser.py:193 - Restored ONNX model mlpTest (completion time: 00:00:00.50)
+2024-10-14 10:21:59,653 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.45)
+2024-10-14 10:21:59,872 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 10:22:00,566 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.36)
+2024-10-14 10:22:00,588 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 10:24:39,314 - INFO - parser.py:158 - Translation started on ONNX model resnet_v1_18
+2024-10-14 10:24:39,432 - INFO - parser.py:193 - Restored ONNX model resnet_v1_18 (completion time: 00:00:00.12)
+2024-10-14 10:24:39,661 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.35)
+2024-10-14 10:24:39,755 - INFO - parser.py:373 - Start nodes mapped from original model: 'input.1': 'resnet_v1_18/input_layer1'.
+2024-10-14 10:24:39,755 - INFO - parser.py:374 - End nodes mapped from original model: '/softmax/Softmax'.
+2024-10-14 10:24:39,763 - INFO - parser.py:288 - Translation completed on ONNX model resnet_v1_18 (completion time: 00:00:00.45)
+2024-10-14 10:24:40,047 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/hailoDFC/resnet_v1_18_hailo_model.har
+2024-10-14 10:25:05,582 - INFO - main.py:34 - Current Time: 10:25:05, 10/14/24
+2024-10-14 10:25:06,591 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.0%
+2024-10-14 10:25:06,592 - INFO - main.py:50 - Memory: Total: 31GB, Available: 23GB
+2024-10-14 10:25:06,592 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 10:25:06,592 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 10:25:06,604 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 10:25:06,608 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 10:25:06,608 - INFO - main.py:109 - Running `hailo tutorial visualizer {hailo_model_har_name} --no-browser`
+2024-10-14 10:25:26,928 - INFO - parser.py:158 - Translation started on ONNX model resnet_v1_18
+2024-10-14 10:25:27,048 - INFO - parser.py:193 - Restored ONNX model resnet_v1_18 (completion time: 00:00:00.12)
+2024-10-14 10:25:27,282 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.35)
+2024-10-14 10:25:27,375 - INFO - parser.py:373 - Start nodes mapped from original model: 'input.1': 'resnet_v1_18/input_layer1'.
+2024-10-14 10:25:27,375 - INFO - parser.py:374 - End nodes mapped from original model: '/softmax/Softmax'.
+2024-10-14 10:25:27,383 - INFO - parser.py:288 - Translation completed on ONNX model resnet_v1_18 (completion time: 00:00:00.46)
+2024-10-14 10:25:27,682 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/hailoDFC/resnet_v1_18_hailo_model.har
+2024-10-14 10:44:31,738 - INFO - parser.py:158 - Translation started on ONNX model resnet_v1_18
+2024-10-14 10:44:31,856 - INFO - parser.py:193 - Restored ONNX model resnet_v1_18 (completion time: 00:00:00.12)
+2024-10-14 10:44:32,087 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.35)
+2024-10-14 10:44:32,182 - INFO - parser.py:373 - Start nodes mapped from original model: 'input.1': 'resnet_v1_18/input_layer1'.
+2024-10-14 10:44:32,182 - INFO - parser.py:374 - End nodes mapped from original model: '/softmax/Softmax'.
+2024-10-14 10:44:32,191 - INFO - parser.py:288 - Translation completed on ONNX model resnet_v1_18 (completion time: 00:00:00.45)
+2024-10-14 10:44:32,496 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/hailoDFC/resnet_v1_18_hailo_model.har
+2024-10-14 10:44:56,381 - INFO - parser.py:158 - Translation started on ONNX model resnet_v1_18
+2024-10-14 10:44:56,498 - INFO - parser.py:193 - Restored ONNX model resnet_v1_18 (completion time: 00:00:00.12)
+2024-10-14 10:44:56,731 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.35)
+2024-10-14 10:44:56,829 - INFO - parser.py:373 - Start nodes mapped from original model: 'input.1': 'resnet_v1_18/input_layer1'.
+2024-10-14 10:44:56,829 - INFO - parser.py:374 - End nodes mapped from original model: '/softmax/Softmax'.
+2024-10-14 10:44:56,837 - INFO - parser.py:288 - Translation completed on ONNX model resnet_v1_18 (completion time: 00:00:00.46)
+2024-10-14 10:44:57,135 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/hailoDFC/resnet_v1_18_hailo_model.har
+2024-10-14 10:46:24,427 - INFO - parser.py:158 - Translation started on ONNX model mlpTest
+2024-10-14 10:46:24,920 - INFO - parser.py:193 - Restored ONNX model mlpTest (completion time: 00:00:00.49)
+2024-10-14 10:46:25,860 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.43)
+2024-10-14 10:46:26,076 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 10:46:26,758 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.33)
+2024-10-14 10:46:26,780 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 10:53:59,964 - INFO - parser.py:158 - Translation started on ONNX model mlpTest
+2024-10-14 10:54:00,453 - INFO - parser.py:193 - Restored ONNX model mlpTest (completion time: 00:00:00.49)
+2024-10-14 10:54:01,389 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.42)
+2024-10-14 10:54:01,600 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 10:54:02,288 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.32)
+2024-10-14 10:54:02,310 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 10:55:54,255 - INFO - parser.py:158 - Translation started on ONNX model mlpTest
+2024-10-14 10:55:54,757 - INFO - parser.py:193 - Restored ONNX model mlpTest (completion time: 00:00:00.50)
+2024-10-14 10:55:55,702 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.45)
+2024-10-14 10:55:55,913 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 10:55:56,604 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.35)
+2024-10-14 10:55:56,626 - WARNING - parser.py:314 - ONNX shape inference failed: Field 'type' of 'value_info' is required but missing.
+2024-10-14 16:32:37,170 - INFO - main.py:34 - Current Time: 16:32:37, 10/14/24
+2024-10-14 16:32:38,180 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 2.1%
+2024-10-14 16:32:38,181 - INFO - main.py:50 - Memory: Total: 31GB, Available: 21GB
+2024-10-14 16:32:38,181 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-14 16:32:38,181 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-14 16:32:38,201 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-14 16:32:38,204 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-14 16:32:38,204 - INFO - main.py:109 - Running `hailo tutorial`
+2024-10-14 16:34:46,054 - INFO - parser.py:158 - Translation started on ONNX model ViT-B32
+2024-10-14 16:34:46,255 - WARNING - parser.py:172 - Large model detected. The graph may contain either a large number of operators, or weight variables with a very large capacity.
+2024-10-14 16:34:46,255 - WARNING - parser.py:176 - Translation time may be a bit long, and some features may be disabled (e.g. model augmentation, retry simplified model, onnx runtime hailo model extraction, etc.).
+2024-10-14 16:34:46,915 - INFO - parser.py:193 - Restored ONNX model ViT-B32 (completion time: 00:00:00.86)
+2024-10-14 16:35:21,532 - INFO - parser.py:158 - Translation started on ONNX model ViT-B32
+2024-10-14 16:35:21,733 - WARNING - parser.py:172 - Large model detected. The graph may contain either a large number of operators, or weight variables with a very large capacity.
+2024-10-14 16:35:21,733 - WARNING - parser.py:176 - Translation time may be a bit long, and some features may be disabled (e.g. model augmentation, retry simplified model, onnx runtime hailo model extraction, etc.).
+2024-10-14 16:35:22,372 - INFO - parser.py:193 - Restored ONNX model ViT-B32 (completion time: 00:00:00.84)
+2024-10-14 16:37:13,467 - INFO - parser.py:158 - Translation started on ONNX model ViT-B32
+2024-10-14 16:37:13,665 - WARNING - parser.py:172 - Large model detected. The graph may contain either a large number of operators, or weight variables with a very large capacity.
+2024-10-14 16:37:13,665 - WARNING - parser.py:176 - Translation time may be a bit long, and some features may be disabled (e.g. model augmentation, retry simplified model, onnx runtime hailo model extraction, etc.).
+2024-10-14 16:37:14,321 - INFO - parser.py:193 - Restored ONNX model ViT-B32 (completion time: 00:00:00.85)
+2024-10-14 17:00:00,520 - INFO - parser.py:158 - Translation started on ONNX model ViT-B32
+2024-10-14 17:00:00,726 - WARNING - parser.py:172 - Large model detected. The graph may contain either a large number of operators, or weight variables with a very large capacity.
+2024-10-14 17:00:00,726 - WARNING - parser.py:176 - Translation time may be a bit long, and some features may be disabled (e.g. model augmentation, retry simplified model, onnx runtime hailo model extraction, etc.).
+2024-10-14 17:00:01,387 - INFO - parser.py:193 - Restored ONNX model ViT-B32 (completion time: 00:00:00.87)
+2024-10-14 17:01:00,283 - INFO - parser.py:158 - Translation started on ONNX model ViT-B32
+2024-10-14 17:01:00,487 - WARNING - parser.py:172 - Large model detected. The graph may contain either a large number of operators, or weight variables with a very large capacity.
+2024-10-14 17:01:00,487 - WARNING - parser.py:176 - Translation time may be a bit long, and some features may be disabled (e.g. model augmentation, retry simplified model, onnx runtime hailo model extraction, etc.).
+2024-10-14 17:01:01,142 - INFO - parser.py:193 - Restored ONNX model ViT-B32 (completion time: 00:00:00.86)
+2024-10-16 08:13:28,103 - INFO - parser.py:158 - Translation started on ONNX model ViT-B32
+2024-10-16 08:13:28,422 - WARNING - parser.py:172 - Large model detected. The graph may contain either a large number of operators, or weight variables with a very large capacity.
+2024-10-16 08:13:28,422 - WARNING - parser.py:176 - Translation time may be a bit long, and some features may be disabled (e.g. model augmentation, retry simplified model, onnx runtime hailo model extraction, etc.).
+2024-10-16 08:13:29,077 - INFO - parser.py:193 - Restored ONNX model ViT-B32 (completion time: 00:00:00.97)
+2024-10-16 08:19:37,697 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-16 08:19:38,078 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.38)
+2024-10-16 08:19:38,079 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.38)
+2024-10-16 08:19:40,925 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.23)
+2024-10-16 08:20:39,572 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-16 08:20:39,959 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.39)
+2024-10-16 08:20:39,960 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.39)
+2024-10-16 08:20:42,749 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.18)
+2024-10-16 08:22:58,183 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-16 08:22:58,569 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.39)
+2024-10-16 08:22:58,570 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.39)
+2024-10-16 08:23:01,155 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.97)
+2024-10-16 09:33:03,202 - INFO - parser.py:158 - Translation started on ONNX model Vit-B32
+2024-10-16 09:33:27,397 - INFO - parser.py:158 - Translation started on ONNX model ViT-B32
+2024-10-16 09:33:27,601 - WARNING - parser.py:172 - Large model detected. The graph may contain either a large number of operators, or weight variables with a very large capacity.
+2024-10-16 09:33:27,601 - WARNING - parser.py:176 - Translation time may be a bit long, and some features may be disabled (e.g. model augmentation, retry simplified model, onnx runtime hailo model extraction, etc.).
+2024-10-16 09:33:28,246 - INFO - parser.py:193 - Restored ONNX model ViT-B32 (completion time: 00:00:00.85)
+2024-10-16 09:35:03,073 - INFO - parser.py:158 - Translation started on ONNX model ViT-B32
+2024-10-16 09:35:03,270 - WARNING - parser.py:172 - Large model detected. The graph may contain either a large number of operators, or weight variables with a very large capacity.
+2024-10-16 09:35:03,270 - WARNING - parser.py:176 - Translation time may be a bit long, and some features may be disabled (e.g. model augmentation, retry simplified model, onnx runtime hailo model extraction, etc.).
+2024-10-16 09:35:03,917 - INFO - parser.py:193 - Restored ONNX model ViT-B32 (completion time: 00:00:00.84)
+2024-10-16 13:03:43,240 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-16 13:03:44,108 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.87)
+2024-10-16 13:03:44,109 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.87)
+2024-10-16 13:03:44,718 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 6 : RUNTIME_EXCEPTION : Non-zero status code returned while running Add node. Name:'/attnpool/Add' Status Message: /onnxruntime_src/onnxruntime/core/providers/cpu/math/element_wise_ops.h:523 void onnxruntime::BroadcastIterator::Append(ptrdiff_t, ptrdiff_t) axis == 1 || axis == largest was false. Attempting to broadcast an axis by a dimension other than 1. 50 by 82
+
+2024-10-16 13:03:49,874 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:06.63)
+2024-10-16 13:03:50,117 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 1 : FAIL : Node (/attnpool/Add) Op (Add) [ShapeInferenceError] Incompatible dimensions
+2024-10-16 13:10:36,072 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-16 13:10:36,933 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.86)
+2024-10-16 13:10:36,934 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.86)
+2024-10-16 13:10:37,538 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 6 : RUNTIME_EXCEPTION : Non-zero status code returned while running Add node. Name:'/attnpool/Add' Status Message: /onnxruntime_src/onnxruntime/core/providers/cpu/math/element_wise_ops.h:523 void onnxruntime::BroadcastIterator::Append(ptrdiff_t, ptrdiff_t) axis == 1 || axis == largest was false. Attempting to broadcast an axis by a dimension other than 1. 50 by 82
+
+2024-10-16 13:10:42,680 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:06.61)
+2024-10-16 13:10:42,996 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 1 : FAIL : Node (/attnpool/Add) Op (Add) [ShapeInferenceError] Incompatible dimensions
+2024-10-16 14:07:47,051 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-16 14:07:47,949 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.90)
+2024-10-16 14:07:47,950 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.90)
+2024-10-16 14:07:48,629 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 2 : INVALID_ARGUMENT : Failed to load model with error: /onnxruntime_src/onnxruntime/core/graph/model_load_utils.h:57 void onnxruntime::model_load_utils::ValidateOpsetForDomain(const std::unordered_map<std::__cxx11::basic_string<char>, int>&, const onnxruntime::logging::Logger&, bool, const string&, int) ONNX Runtime only *guarantees* support for models stamped with official released onnx opset versions. Opset 18 is under development and support for this is limited. The operator schemas and or other functionality may change before next ONNX release and in this case ONNX Runtime will not guarantee backward compatibility. Current official support for domain ai.onnx is till opset 17.
+
+2024-10-16 14:07:51,914 - INFO - parser.py:257 - Unable to simplify the model: list index out of range
+2024-10-16 14:09:36,616 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-16 14:09:37,531 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.92)
+2024-10-16 14:09:37,532 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.92)
+2024-10-16 14:09:38,331 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 6 : RUNTIME_EXCEPTION : Non-zero status code returned while running Add node. Name:'/attnpool/Add' Status Message: /onnxruntime_src/onnxruntime/core/providers/cpu/math/element_wise_ops.h:523 void onnxruntime::BroadcastIterator::Append(ptrdiff_t, ptrdiff_t) axis == 1 || axis == largest was false. Attempting to broadcast an axis by a dimension other than 1. 50 by 82
+
+2024-10-16 14:09:44,431 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:07.82)
+2024-10-16 14:09:44,792 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 1 : FAIL : Node (/attnpool/Add) Op (Add) [ShapeInferenceError] Incompatible dimensions
+2024-10-16 14:11:49,723 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-16 14:11:50,625 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.90)
+2024-10-16 14:11:50,626 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.90)
+2024-10-16 14:11:51,439 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 6 : RUNTIME_EXCEPTION : Non-zero status code returned while running Add node. Name:'/attnpool/Add' Status Message: /onnxruntime_src/onnxruntime/core/providers/cpu/math/element_wise_ops.h:523 void onnxruntime::BroadcastIterator::Append(ptrdiff_t, ptrdiff_t) axis == 1 || axis == largest was false. Attempting to broadcast an axis by a dimension other than 1. 50 by 82
+
+2024-10-16 14:11:57,650 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:07.93)
+2024-10-16 14:11:58,018 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 1 : FAIL : Node (/attnpool/Add) Op (Add) [ShapeInferenceError] Incompatible dimensions
+2024-10-16 14:12:45,729 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-16 14:12:46,641 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.91)
+2024-10-16 14:12:46,642 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:00.91)
+2024-10-16 14:12:47,249 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 6 : RUNTIME_EXCEPTION : Non-zero status code returned while running Add node. Name:'/attnpool/Add' Status Message: /onnxruntime_src/onnxruntime/core/providers/cpu/math/element_wise_ops.h:523 void onnxruntime::BroadcastIterator::Append(ptrdiff_t, ptrdiff_t) axis == 1 || axis == largest was false. Attempting to broadcast an axis by a dimension other than 1. 50 by 82
+
+2024-10-16 14:12:52,319 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:06.59)
+2024-10-16 14:12:52,494 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 1 : FAIL : Node (/attnpool/Add) Op (Add) [ShapeInferenceError] Incompatible dimensions
+2024-10-16 14:14:15,771 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-16 14:14:16,662 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.89)
+2024-10-16 14:14:17,257 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 6 : RUNTIME_EXCEPTION : Non-zero status code returned while running Add node. Name:'/attnpool/Add' Status Message: /onnxruntime_src/onnxruntime/core/providers/cpu/math/element_wise_ops.h:523 void onnxruntime::BroadcastIterator::Append(ptrdiff_t, ptrdiff_t) axis == 1 || axis == largest was false. Attempting to broadcast an axis by a dimension other than 1. 50 by 82
+
+2024-10-16 14:14:22,269 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:06.50)
+2024-10-16 14:14:22,458 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 1 : FAIL : Node (/attnpool/Add) Op (Add) [ShapeInferenceError] Incompatible dimensions
+2024-10-16 14:14:48,335 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-16 14:14:49,239 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.90)
+2024-10-16 14:14:54,474 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:06.14)
+2024-10-16 14:15:27,396 - INFO - main.py:34 - Current Time: 14:15:27, 10/16/24
+2024-10-16 14:15:28,404 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.9%
+2024-10-16 14:15:28,405 - INFO - main.py:50 - Memory: Total: 31GB, Available: 21GB
+2024-10-16 14:15:28,405 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-16 14:15:28,405 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-16 14:15:28,485 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-16 14:15:28,488 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-16 14:15:28,488 - INFO - main.py:109 - Running `hailo tutorial`
+2024-10-16 14:32:15,836 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-16 14:32:16,747 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.91)
+2024-10-16 14:32:21,977 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:06.14)
+2024-10-16 14:34:50,305 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-16 14:34:51,211 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.91)
+2024-10-16 14:34:56,350 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:06.04)
+2024-10-16 14:35:50,960 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-16 14:35:51,866 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.91)
+2024-10-16 14:35:57,055 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:06.10)
+2024-10-16 15:47:43,984 - INFO - parser.py:158 - Translation started on ONNX model RN50x4_modified
+2024-10-16 15:47:44,852 - INFO - parser.py:193 - Restored ONNX model RN50x4_modified (completion time: 00:00:00.87)
+2024-10-16 16:11:52,723 - INFO - parser.py:158 - Translation started on ONNX model RN50x4_modified
+2024-10-16 16:11:53,592 - INFO - parser.py:193 - Restored ONNX model RN50x4_modified (completion time: 00:00:00.87)
+2024-10-16 16:11:56,498 - INFO - parser.py:257 - Unable to simplify the model: list index out of range
+2024-10-16 16:29:51,285 - INFO - main.py:34 - Current Time: 16:29:51, 10/16/24
+2024-10-16 16:29:52,296 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 2.0%
+2024-10-16 16:29:52,296 - INFO - main.py:50 - Memory: Total: 31GB, Available: 21GB
+2024-10-16 16:29:52,297 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-16 16:29:52,297 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-16 16:29:52,310 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-16 16:29:52,313 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-16 16:29:52,313 - INFO - main.py:109 - Running `hailo tutorial`
+2024-10-18 08:23:27,911 - INFO - parser.py:158 - Translation started on ONNX model RN50_modified
+2024-10-18 08:23:28,298 - INFO - parser.py:193 - Restored ONNX model RN50_modified (completion time: 00:00:00.39)
+2024-10-18 08:23:29,328 - INFO - parser.py:257 - Unable to simplify the model: list index out of range
+2024-10-18 08:24:55,718 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 08:24:56,112 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.39)
+2024-10-18 08:25:50,808 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 08:25:51,193 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.39)
+2024-10-18 08:25:53,580 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.77)
+2024-10-18 08:41:19,184 - INFO - main.py:34 - Current Time: 08:41:19, 10/18/24
+2024-10-18 08:41:20,192 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.3%
+2024-10-18 08:41:20,193 - INFO - main.py:50 - Memory: Total: 31GB, Available: 22GB
+2024-10-18 08:41:20,193 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-18 08:41:20,194 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-18 08:41:20,215 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-18 08:41:20,218 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-18 08:41:20,218 - INFO - main.py:109 - Running `hailo dfc-studio`
+2024-10-18 08:41:20,223 - INFO - dfc_studio.py:22 - Checking requirements
+2024-10-18 08:47:40,967 - INFO - main.py:34 - Current Time: 08:47:40, 10/18/24
+2024-10-18 08:47:41,978 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 0.9%
+2024-10-18 08:47:41,978 - INFO - main.py:50 - Memory: Total: 31GB, Available: 22GB
+2024-10-18 08:47:41,978 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-18 08:47:41,979 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-18 08:47:41,990 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-18 08:47:41,993 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-18 08:47:41,993 - INFO - main.py:109 - Running `hailo dfc-studio`
+2024-10-18 08:47:41,997 - INFO - dfc_studio.py:22 - Checking requirements
+2024-10-18 08:47:42,001 - INFO - dfc_studio.py:49 - Node.js is installed. Version: v20.18.0 meets the minimum requirement of v20.9.0
+2024-10-18 08:47:42,001 - INFO - dfc_studio.py:24 - Checking and installing DFC Studio dependencies
+2024-10-18 08:47:49,116 - INFO - dfc_studio.py:26 - Starting DFC Studio
+2024-10-18 08:50:39,558 - INFO - main.py:34 - Current Time: 08:50:39, 10/18/24
+2024-10-18 08:50:40,566 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.0%
+2024-10-18 08:50:40,567 - INFO - main.py:50 - Memory: Total: 31GB, Available: 23GB
+2024-10-18 08:50:40,567 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-18 08:50:40,567 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-18 08:50:40,581 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-18 08:50:40,585 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-18 08:50:40,585 - INFO - main.py:109 - Running `hailo dfc-studio`
+2024-10-18 08:50:40,591 - INFO - dfc_studio.py:22 - Checking requirements
+2024-10-18 08:50:40,596 - INFO - dfc_studio.py:49 - Node.js is installed. Version: v20.18.0 meets the minimum requirement of v20.9.0
+2024-10-18 08:50:40,596 - INFO - dfc_studio.py:24 - Checking and installing DFC Studio dependencies
+2024-10-18 08:50:41,101 - INFO - dfc_studio.py:26 - Starting DFC Studio
+2024-10-18 08:56:30,241 - INFO - main.py:34 - Current Time: 08:56:30, 10/18/24
+2024-10-18 08:56:31,252 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.3%
+2024-10-18 08:56:31,252 - INFO - main.py:50 - Memory: Total: 31GB, Available: 23GB
+2024-10-18 08:56:31,252 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-18 08:56:31,252 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-18 08:56:31,260 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-18 08:56:31,262 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-18 08:56:31,262 - INFO - main.py:109 - Running `hailo dfc-studio`
+2024-10-18 08:56:31,265 - INFO - dfc_studio.py:22 - Checking requirements
+2024-10-18 08:56:31,268 - INFO - dfc_studio.py:49 - Node.js is installed. Version: v20.18.0 meets the minimum requirement of v20.9.0
+2024-10-18 08:56:31,268 - INFO - dfc_studio.py:24 - Checking and installing DFC Studio dependencies
+2024-10-18 08:56:31,761 - INFO - dfc_studio.py:26 - Starting DFC Studio
+2024-10-18 08:57:44,969 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 08:57:45,368 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.40)
+2024-10-18 08:57:47,686 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.72)
+2024-10-18 09:20:12,489 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 09:20:12,881 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.39)
+2024-10-18 09:20:15,279 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.79)
+2024-10-18 09:21:59,574 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 09:21:59,964 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.39)
+2024-10-18 09:22:02,304 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.73)
+2024-10-18 09:31:15,795 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 09:31:16,201 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.41)
+2024-10-18 09:31:18,523 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.73)
+2024-10-18 09:38:56,489 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 09:38:56,884 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.40)
+2024-10-18 09:38:59,224 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.73)
+2024-10-18 09:42:27,439 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 09:42:27,824 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.39)
+2024-10-18 09:42:30,160 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.72)
+2024-10-18 09:48:45,741 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 09:48:46,127 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.39)
+2024-10-18 09:48:48,500 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.76)
+2024-10-18 10:12:47,445 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 10:12:47,835 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.39)
+2024-10-18 10:12:50,188 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.74)
+2024-10-18 10:13:22,304 - INFO - parser.py:158 - Translation started on ONNX model RN50_modified
+2024-10-18 10:13:22,688 - INFO - parser.py:193 - Restored ONNX model RN50_modified (completion time: 00:00:00.38)
+2024-10-18 10:14:03,097 - INFO - parser.py:158 - Translation started on ONNX model RN50_modified
+2024-10-18 10:14:03,479 - INFO - parser.py:193 - Restored ONNX model RN50_modified (completion time: 00:00:00.38)
+2024-10-18 10:14:04,505 - INFO - parser.py:257 - Unable to simplify the model: list index out of range
+2024-10-18 11:32:49,619 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 11:32:49,948 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.33)
+2024-10-18 11:33:48,403 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 11:33:48,730 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.33)
+2024-10-18 11:34:09,981 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 11:34:10,310 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.33)
+2024-10-18 11:34:11,735 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.76)
+2024-10-18 11:35:39,721 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 11:35:40,015 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.29)
+2024-10-18 11:35:41,389 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.67)
+2024-10-18 11:35:50,561 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 11:35:50,748 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.19)
+2024-10-18 11:35:52,198 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.64)
+2024-10-18 11:37:35,892 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 11:37:36,202 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.31)
+2024-10-18 11:37:37,652 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.76)
+2024-10-18 11:42:00,855 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 11:42:01,072 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.22)
+2024-10-18 11:42:02,433 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.58)
+2024-10-18 11:42:40,167 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 11:42:40,409 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.24)
+2024-10-18 11:42:41,919 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.75)
+2024-10-18 11:43:01,292 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 11:43:01,616 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-18 11:43:39,904 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 11:43:40,231 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.33)
+2024-10-18 11:43:41,587 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.68)
+2024-10-18 11:43:51,400 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 11:43:51,740 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.34)
+2024-10-18 11:43:53,149 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.75)
+2024-10-18 11:43:54,708 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.31)
+2024-10-18 11:48:35,541 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 11:48:35,862 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-18 11:48:37,902 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.36)
+2024-10-18 11:48:39,882 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 11:48:40,194 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.31)
+2024-10-18 11:48:41,821 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.94)
+2024-10-18 11:49:04,556 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 11:49:04,876 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-18 11:49:06,288 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.73)
+2024-10-18 11:49:07,864 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.31)
+2024-10-18 11:49:27,705 - INFO - main.py:34 - Current Time: 11:49:27, 10/18/24
+2024-10-18 11:49:28,713 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 2.6%
+2024-10-18 11:49:28,713 - INFO - main.py:50 - Memory: Total: 31GB, Available: 13GB
+2024-10-18 11:49:28,713 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-18 11:49:28,714 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-18 11:49:28,728 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-18 11:49:28,731 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-18 11:49:28,731 - INFO - main.py:109 - Running `hailo tutorial`
+2024-10-18 11:50:07,818 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 11:50:08,157 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.34)
+2024-10-18 11:50:09,599 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.78)
+2024-10-18 11:50:11,159 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.34)
+2024-10-18 12:52:19,038 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 12:52:19,380 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.34)
+2024-10-18 12:52:20,822 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.78)
+2024-10-18 12:52:22,394 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.36)
+2024-10-18 12:55:21,747 - INFO - parser.py:158 - Translation started on ONNX model ViT-B32
+2024-10-18 12:55:22,503 - INFO - parser.py:193 - Restored ONNX model ViT-B32 (completion time: 00:00:00.76)
+2024-10-18 12:55:25,223 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:03.48)
+2024-10-18 12:55:31,960 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:10.21)
+2024-10-18 12:55:52,375 - INFO - main.py:34 - Current Time: 12:55:52, 10/18/24
+2024-10-18 12:55:53,385 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 2.5%
+2024-10-18 12:55:53,385 - INFO - main.py:50 - Memory: Total: 31GB, Available: 17GB
+2024-10-18 12:55:53,385 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-18 12:55:53,386 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-18 12:55:53,397 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-18 12:55:53,401 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-18 12:55:53,401 - INFO - main.py:109 - Running `hailo tutorial`
+2024-10-18 12:57:36,751 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 12:57:37,092 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.34)
+2024-10-18 12:57:38,509 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.76)
+2024-10-18 12:57:40,034 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.28)
+2024-10-18 13:00:10,266 - INFO - main.py:34 - Current Time: 13:00:10, 10/18/24
+2024-10-18 13:00:11,275 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 0.9%
+2024-10-18 13:00:11,275 - INFO - main.py:50 - Memory: Total: 31GB, Available: 16GB
+2024-10-18 13:00:11,275 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-18 13:00:11,276 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-18 13:00:11,286 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-18 13:00:11,290 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-18 13:00:11,290 - INFO - main.py:109 - Running `hailo tutorial`
+2024-10-18 13:01:39,830 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 13:01:40,171 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.34)
+2024-10-18 13:01:41,573 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.74)
+2024-10-18 13:01:42,797 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.97)
+2024-10-18 13:08:49,258 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 13:08:49,595 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.34)
+2024-10-18 13:08:51,011 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.75)
+2024-10-18 13:08:52,579 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.32)
+2024-10-18 13:11:18,683 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-18 13:11:19,402 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.72)
+2024-10-18 13:11:22,636 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:03.95)
+2024-10-18 13:11:26,089 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:07.41)
+2024-10-18 13:13:28,801 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-18 13:13:29,527 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.73)
+2024-10-18 13:13:32,627 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.83)
+2024-10-18 13:18:26,383 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-18 13:18:27,114 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.73)
+2024-10-18 13:18:30,277 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.89)
+2024-10-18 13:22:54,107 - INFO - main.py:34 - Current Time: 13:22:54, 10/18/24
+2024-10-18 13:22:55,116 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 2.3%
+2024-10-18 13:22:55,116 - INFO - main.py:50 - Memory: Total: 31GB, Available: 18GB
+2024-10-18 13:22:55,116 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-18 13:22:55,117 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-18 13:22:55,133 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-18 13:22:55,136 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-18 13:22:55,136 - INFO - main.py:109 - Running `hailo tutorial`
+2024-10-18 15:29:34,369 - INFO - main.py:34 - Current Time: 15:29:34, 10/18/24
+2024-10-18 15:29:35,378 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 0.9%
+2024-10-18 15:29:35,379 - INFO - main.py:50 - Memory: Total: 31GB, Available: 17GB
+2024-10-18 15:29:35,380 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-18 15:29:35,380 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-18 15:29:35,391 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-18 15:29:35,394 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-18 15:29:35,395 - INFO - main.py:109 - Running `hailo -help`
+2024-10-18 15:29:50,729 - INFO - main.py:34 - Current Time: 15:29:50, 10/18/24
+2024-10-18 15:29:51,739 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.0%
+2024-10-18 15:29:51,740 - INFO - main.py:50 - Memory: Total: 31GB, Available: 17GB
+2024-10-18 15:29:51,740 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-18 15:29:51,741 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-18 15:29:51,762 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-18 15:29:51,767 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-18 15:29:51,767 - INFO - main.py:109 - Running `hailo -h`
+2024-10-18 15:30:19,174 - INFO - main.py:34 - Current Time: 15:30:19, 10/18/24
+2024-10-18 15:30:20,184 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.1%
+2024-10-18 15:30:20,185 - INFO - main.py:50 - Memory: Total: 31GB, Available: 17GB
+2024-10-18 15:30:20,185 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-45-generic
+2024-10-18 15:30:20,185 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-18 15:30:20,208 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-18 15:30:20,211 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-18 15:30:20,211 - INFO - main.py:109 - Running `hailo --version`
+2024-10-18 15:32:52,666 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-18 15:32:53,393 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.73)
+2024-10-18 15:32:56,616 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:03.95)
+2024-10-18 15:33:00,048 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:07.38)
+2024-10-18 16:36:20,369 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-18 16:36:21,086 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.72)
+2024-10-18 16:36:24,423 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:04.05)
+2024-10-18 16:36:27,989 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:07.62)
+2024-10-18 16:37:25,006 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-18 16:37:25,349 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.34)
+2024-10-18 16:37:26,798 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.79)
+2024-10-18 16:37:28,310 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.30)
+2024-10-21 08:08:16,874 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:08:17,299 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.43)
+2024-10-21 08:08:18,703 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.83)
+2024-10-21 08:08:20,174 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.30)
+2024-10-21 08:11:51,578 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:11:51,893 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 08:11:53,301 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.72)
+2024-10-21 08:11:53,486 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 6 : RUNTIME_EXCEPTION : Non-zero status code returned while running Add node. Name:'/attnpool/Add' Status Message: /onnxruntime_src/onnxruntime/core/providers/cpu/math/element_wise_ops.h:523 void onnxruntime::BroadcastIterator::Append(ptrdiff_t, ptrdiff_t) axis == 1 || axis == largest was false. Attempting to broadcast an axis by a dimension other than 1. 50 by 82
+
+2024-10-21 08:11:54,712 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.13)
+2024-10-21 08:11:54,806 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 1 : FAIL : Node (/attnpool/Add) Op (Add) [ShapeInferenceError] Incompatible dimensions
+2024-10-21 08:12:13,916 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:12:14,239 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 08:12:15,637 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.72)
+2024-10-21 08:12:15,825 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 6 : RUNTIME_EXCEPTION : Non-zero status code returned while running Add node. Name:'/attnpool/Add' Status Message: /onnxruntime_src/onnxruntime/core/providers/cpu/math/element_wise_ops.h:523 void onnxruntime::BroadcastIterator::Append(ptrdiff_t, ptrdiff_t) axis == 1 || axis == largest was false. Attempting to broadcast an axis by a dimension other than 1. 50 by 82
+
+2024-10-21 08:12:17,019 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.10)
+2024-10-21 08:12:17,147 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 1 : FAIL : Node (/attnpool/Add) Op (Add) [ShapeInferenceError] Incompatible dimensions
+2024-10-21 08:12:48,274 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:12:48,591 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 08:12:49,990 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.72)
+2024-10-21 08:12:50,192 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 6 : RUNTIME_EXCEPTION : Non-zero status code returned while running Add node. Name:'/attnpool/Add' Status Message: /onnxruntime_src/onnxruntime/core/providers/cpu/math/element_wise_ops.h:523 void onnxruntime::BroadcastIterator::Append(ptrdiff_t, ptrdiff_t) axis == 1 || axis == largest was false. Attempting to broadcast an axis by a dimension other than 1. 50 by 82
+
+2024-10-21 08:12:51,396 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.12)
+2024-10-21 08:12:51,491 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 1 : FAIL : Node (/attnpool/Add) Op (Add) [ShapeInferenceError] Incompatible dimensions
+2024-10-21 08:14:17,719 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:14:18,044 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 08:14:19,437 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.72)
+2024-10-21 08:14:19,635 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 6 : RUNTIME_EXCEPTION : Non-zero status code returned while running Add node. Name:'/attnpool/Add' Status Message: /onnxruntime_src/onnxruntime/core/providers/cpu/math/element_wise_ops.h:523 void onnxruntime::BroadcastIterator::Append(ptrdiff_t, ptrdiff_t) axis == 1 || axis == largest was false. Attempting to broadcast an axis by a dimension other than 1. 50 by 82
+
+2024-10-21 08:14:20,862 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.14)
+2024-10-21 08:14:20,959 - WARNING - parser.py:314 - ONNX shape inference failed: [ONNXRuntimeError] : 1 : FAIL : Node (/attnpool/Add) Op (Add) [ShapeInferenceError] Incompatible dimensions
+2024-10-21 08:15:28,956 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:15:29,274 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 08:15:30,673 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.72)
+2024-10-21 08:15:32,184 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.23)
+2024-10-21 08:15:51,390 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:15:51,715 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.33)
+2024-10-21 08:15:53,132 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.74)
+2024-10-21 08:15:54,589 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.20)
+2024-10-21 08:18:15,735 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:18:16,051 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 08:18:17,439 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.70)
+2024-10-21 08:18:18,894 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.16)
+2024-10-21 08:19:09,647 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:19:09,970 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 08:19:11,368 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.72)
+2024-10-21 08:19:12,856 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.21)
+2024-10-21 08:19:43,514 - INFO - main.py:34 - Current Time: 08:19:43, 10/21/24
+2024-10-21 08:19:44,528 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 0.7%
+2024-10-21 08:19:44,528 - INFO - main.py:50 - Memory: Total: 31GB, Available: 24GB
+2024-10-21 08:19:44,528 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-47-generic
+2024-10-21 08:19:44,529 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-21 08:19:44,541 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-21 08:19:44,546 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-21 08:19:44,546 - INFO - main.py:109 - Running `hailo tutorial`
+2024-10-21 08:20:47,230 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:20:47,550 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 08:20:48,898 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.67)
+2024-10-21 08:25:06,016 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:25:06,334 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 08:25:07,745 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.73)
+2024-10-21 08:25:09,253 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.24)
+2024-10-21 08:25:31,221 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:25:31,551 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.33)
+2024-10-21 08:25:32,956 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.74)
+2024-10-21 08:25:34,420 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.20)
+2024-10-21 08:29:09,532 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:29:09,856 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 08:29:11,454 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.92)
+2024-10-21 08:29:23,264 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:29:23,589 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.33)
+2024-10-21 08:29:24,991 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.73)
+2024-10-21 08:29:26,194 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.93)
+2024-10-21 08:33:19,821 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:33:20,150 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.33)
+2024-10-21 08:33:21,488 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.67)
+2024-10-21 08:33:41,709 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:33:42,030 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 08:33:43,370 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.66)
+2024-10-21 08:45:18,567 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:45:18,891 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 08:45:20,226 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.66)
+2024-10-21 08:46:27,985 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:46:28,305 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 08:46:29,648 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.66)
+2024-10-21 08:47:38,677 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:47:39,000 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 08:47:40,370 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.69)
+2024-10-21 08:49:22,300 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:49:22,615 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 08:49:23,956 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.66)
+2024-10-21 08:49:47,140 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:49:47,463 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 08:49:48,787 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.65)
+2024-10-21 08:51:42,800 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 08:51:43,119 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 08:51:44,431 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.63)
+2024-10-21 09:00:10,111 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 09:00:10,424 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.31)
+2024-10-21 09:00:11,768 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.66)
+2024-10-21 09:11:19,434 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 09:11:19,768 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.33)
+2024-10-21 09:11:21,101 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.67)
+2024-10-21 09:11:40,631 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 09:11:40,964 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.33)
+2024-10-21 09:11:42,375 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.74)
+2024-10-21 09:11:43,848 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.22)
+2024-10-21 09:19:01,804 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 09:19:02,129 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.33)
+2024-10-21 09:19:03,522 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.72)
+2024-10-21 09:20:32,106 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 09:20:32,431 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.33)
+2024-10-21 09:20:33,825 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.72)
+2024-10-21 09:20:50,656 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:18.55)
+2024-10-21 09:20:53,712 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50/input_layer1'.
+2024-10-21 09:20:53,712 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-21 09:20:53,844 - INFO - parser.py:288 - Translation completed on ONNX model RN50 (completion time: 00:00:21.74)
+2024-10-21 09:20:55,495 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/hailoDFC/RN50_hailo_model.har
+2024-10-21 09:21:50,939 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 09:21:51,258 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 09:21:52,639 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.70)
+2024-10-21 09:30:53,802 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 09:30:54,132 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.33)
+2024-10-21 09:30:55,504 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.70)
+2024-10-21 09:30:57,093 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.29)
+2024-10-21 09:30:57,788 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50/input_layer1'.
+2024-10-21 09:30:57,789 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-21 09:30:57,922 - INFO - parser.py:288 - Translation completed on ONNX model RN50 (completion time: 00:00:04.12)
+2024-10-21 09:30:59,612 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/hailoDFC/RN50_hailo_model.har
+2024-10-21 09:31:37,908 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 09:31:38,231 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 09:31:39,567 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:01.66)
+2024-10-21 09:32:08,795 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 09:32:09,113 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 09:32:10,511 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.72)
+2024-10-21 09:32:12,205 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.41)
+2024-10-21 09:32:12,911 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50/input_layer1'.
+2024-10-21 09:32:12,911 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-21 09:32:13,046 - INFO - parser.py:288 - Translation completed on ONNX model RN50 (completion time: 00:00:04.25)
+2024-10-21 09:32:14,735 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/hailoDFC/RN50_hailo_model.har
+2024-10-21 09:38:58,995 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 09:38:59,317 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 09:39:00,687 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.69)
+2024-10-21 09:39:02,276 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.28)
+2024-10-21 09:39:02,954 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50/input_layer1'.
+2024-10-21 09:39:02,955 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-21 09:39:03,090 - INFO - parser.py:288 - Translation completed on ONNX model RN50 (completion time: 00:00:04.10)
+2024-10-21 09:39:04,761 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/hailoDFC/RN50_hailo_model.har
+2024-10-21 09:40:32,347 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-21 09:40:32,667 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.32)
+2024-10-21 09:40:34,044 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.70)
+2024-10-21 09:40:35,652 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.31)
+2024-10-21 09:40:36,332 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50/input_layer1'.
+2024-10-21 09:40:36,332 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-21 09:40:36,464 - INFO - parser.py:288 - Translation completed on ONNX model RN50 (completion time: 00:00:04.12)
+2024-10-21 09:40:38,094 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/hailoDFC/Harfiles/RN50_hailo_model.har
+2024-10-21 09:42:42,567 - INFO - hailo_nn.py:1634 - Found a '.' character in net_name, which isn't supported. New net_name is ViT-B32_onnx
+2024-10-21 09:42:42,567 - INFO - parser.py:158 - Translation started on ONNX model ViT-B32_onnx
+2024-10-21 09:43:08,429 - INFO - parser.py:158 - Translation started on ONNX model ViT-B32
+2024-10-21 09:43:09,146 - INFO - parser.py:193 - Restored ONNX model ViT-B32 (completion time: 00:00:00.72)
+2024-10-21 09:43:11,798 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:03.37)
+2024-10-21 09:43:20,363 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:11.93)
+2024-10-21 10:15:18,400 - INFO - hailo_nn.py:1640 - Found a net_name that starts with a digit, added a prefix. New net_name is net_50x4
+2024-10-21 10:15:18,400 - INFO - parser.py:158 - Translation started on ONNX model net_50x4
+2024-10-21 10:15:37,816 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-21 10:15:38,511 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.70)
+2024-10-21 10:15:41,656 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:03.84)
+2024-10-21 10:15:45,327 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:07.51)
+2024-10-21 10:15:46,469 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50x4/input_layer1'.
+2024-10-21 10:15:46,469 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-21 10:15:46,658 - INFO - parser.py:288 - Translation completed on ONNX model RN50x4 (completion time: 00:00:08.84)
+2024-10-21 10:15:49,048 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/hailoDFC/Harfiles/RN50x4_hailo_model.har
+2024-10-21 10:16:48,940 - INFO - main.py:34 - Current Time: 10:16:48, 10/21/24
+2024-10-21 10:16:49,949 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.7%
+2024-10-21 10:16:49,949 - INFO - main.py:50 - Memory: Total: 31GB, Available: 21GB
+2024-10-21 10:16:49,949 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-47-generic
+2024-10-21 10:16:49,949 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-21 10:16:49,956 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-21 10:16:49,959 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-21 10:16:49,959 - INFO - main.py:109 - Running `hailo tutorial`
+2024-10-21 10:21:11,890 - INFO - main.py:34 - Current Time: 10:21:11, 10/21/24
+2024-10-21 10:21:12,898 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.8%
+2024-10-21 10:21:12,899 - INFO - main.py:50 - Memory: Total: 31GB, Available: 22GB
+2024-10-21 10:21:12,899 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-47-generic
+2024-10-21 10:21:12,900 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-21 10:21:12,913 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-21 10:21:12,915 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-21 10:21:12,915 - INFO - main.py:109 - Running `hailo tutorial visualizer {hailo_model_har_name} --no-browser`
+2024-10-21 10:22:00,738 - INFO - main.py:34 - Current Time: 10:22:00, 10/21/24
+2024-10-21 10:22:01,746 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.4%
+2024-10-21 10:22:01,746 - INFO - main.py:50 - Memory: Total: 31GB, Available: 22GB
+2024-10-21 10:22:01,746 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-47-generic
+2024-10-21 10:22:01,747 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-21 10:22:01,760 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-21 10:22:01,762 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-21 10:22:01,762 - INFO - main.py:109 - Running `hailo tutorial visualizer {Harfiles/RN50x4_hailo_model.har} --no-browser`
+2024-10-21 10:22:16,405 - INFO - main.py:34 - Current Time: 10:22:16, 10/21/24
+2024-10-21 10:22:17,413 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.3%
+2024-10-21 10:22:17,414 - INFO - main.py:50 - Memory: Total: 31GB, Available: 22GB
+2024-10-21 10:22:17,414 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-47-generic
+2024-10-21 10:22:17,415 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-21 10:22:17,432 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-21 10:22:17,435 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-21 10:22:17,436 - INFO - main.py:109 - Running `hailo tutorial visualizer {RN50x4_hailo_model.har} --no-browser`
+2024-10-21 10:22:30,078 - INFO - main.py:34 - Current Time: 10:22:30, 10/21/24
+2024-10-21 10:22:31,086 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.4%
+2024-10-21 10:22:31,087 - INFO - main.py:50 - Memory: Total: 31GB, Available: 22GB
+2024-10-21 10:22:31,087 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-47-generic
+2024-10-21 10:22:31,088 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-21 10:22:31,102 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-21 10:22:31,104 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-21 10:22:31,104 - INFO - main.py:109 - Running `hailo tutorial visualizer RN50x4_hailo_model.har --no-browser`
+2024-10-21 10:44:37,411 - INFO - main.py:34 - Current Time: 10:44:37, 10/21/24
+2024-10-21 10:44:38,419 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 1.5%
+2024-10-21 10:44:38,420 - INFO - main.py:50 - Memory: Total: 31GB, Available: 21GB
+2024-10-21 10:44:38,421 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-47-generic
+2024-10-21 10:44:38,421 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-21 10:44:38,433 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-21 10:44:38,435 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-21 10:44:38,435 - INFO - main.py:109 - Running `hailo tutorial`
+2024-10-21 11:01:18,837 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-21 11:01:19,534 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.70)
+2024-10-21 11:01:22,728 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:03.89)
+2024-10-21 11:01:25,992 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:07.16)
+2024-10-21 11:01:26,523 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50x4/input_layer1'.
+2024-10-21 11:01:26,524 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-21 11:01:26,561 - INFO - parser.py:288 - Translation completed on ONNX model RN50x4 (completion time: 00:00:07.72)
+2024-10-21 11:01:27,791 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/hailoDFC/Harfiles/RN50x4_hailo_model.har
