@@ -4,7 +4,7 @@ from PIL import Image
 import onnx
 from onnx import helper
 
-vision_arch = "RN50x4"
+vision_arch = "RN50"
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 print(clip.available_models())
@@ -12,7 +12,7 @@ model, preprocess = clip.load("RN50", device=device)
 model2, preprocess2 = clip.load("RN50x4", device=device)
 
 # Preprocess image
-image = preprocess(Image.open("pics/constructionsite.png")).unsqueeze(0).to(device)
+image = preprocess(Image.open("pics/constructionsite.jpg")).unsqueeze(0).to(device)
 
 # ==================== #
 # Export Model as ONNX #

@@ -8,7 +8,7 @@ import onnx
 print(onnx.__version__)
 chosen_hw_arch = "hailo8"
 
-onnx_model_name = "RN50x4"
+onnx_model_name = "RN50"
 onnx_path = f"models/{onnx_model_name}.onnx"
 
 runner = ClientRunner(hw_arch=chosen_hw_arch)

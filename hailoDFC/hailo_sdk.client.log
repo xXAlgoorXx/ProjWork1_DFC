@@ -853,3 +853,137 @@
 2024-10-21 11:01:26,524 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
 2024-10-21 11:01:26,561 - INFO - parser.py:288 - Translation completed on ONNX model RN50x4 (completion time: 00:00:07.72)
 2024-10-21 11:01:27,791 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/hailoDFC/Harfiles/RN50x4_hailo_model.har
+2024-10-21 16:17:48,977 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-21 16:17:49,689 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.71)
+2024-10-21 16:17:52,894 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:03.92)
+2024-10-21 16:17:56,121 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:07.14)
+2024-10-21 16:17:56,670 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50x4/input_layer1'.
+2024-10-21 16:17:56,670 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-21 16:17:56,707 - INFO - parser.py:288 - Translation completed on ONNX model RN50x4 (completion time: 00:00:07.73)
+2024-10-21 16:17:57,954 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/ProjWork1_DFC/hailoDFC/Harfiles/RN50x4_hailo_model.har
+2024-10-23 09:34:36,553 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-23 09:34:37,301 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.75)
+2024-10-23 09:34:40,529 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:03.98)
+2024-10-23 09:34:43,939 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:07.39)
+2024-10-23 09:34:44,529 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50x4/input_layer1'.
+2024-10-23 09:34:44,530 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-23 09:34:44,655 - INFO - parser.py:288 - Translation completed on ONNX model RN50x4 (completion time: 00:00:08.10)
+2024-10-23 09:34:45,798 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/ProjWork1_DFC/hailoDFC/Harfiles/RN50x4_hailo_model.har
+2024-10-23 09:42:46,539 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 09:42:46,711 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.17)
+2024-10-23 09:42:47,789 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.25)
+2024-10-23 09:42:49,100 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.56)
+2024-10-23 09:42:49,519 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50/input_layer1'.
+2024-10-23 09:42:49,519 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-23 09:42:49,602 - INFO - parser.py:288 - Translation completed on ONNX model RN50 (completion time: 00:00:03.06)
+2024-10-23 09:42:51,239 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/ProjWork1_DFC/hailoDFC/Harfiles/RN50_hailo_model.har
+2024-10-23 10:20:39,056 - WARNING - client_runner.py:2262 - use_service is an internal parameter and should not be used by the user.
+2024-10-23 10:24:43,660 - INFO - client_runner.py:479 - Loading model script commands to RN50 from string
+2024-10-23 10:24:44,645 - IMPORTANT - sdk_backend.py:1009 - Starting Model Optimization
+2024-10-23 10:34:50,730 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 10:34:51,199 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.47)
+2024-10-23 10:34:52,661 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.93)
+2024-10-23 10:34:54,050 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.32)
+2024-10-23 10:34:54,318 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50/input_layer1'.
+2024-10-23 10:34:54,318 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-23 10:34:54,344 - INFO - parser.py:288 - Translation completed on ONNX model RN50 (completion time: 00:00:03.61)
+2024-10-23 10:34:55,060 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/ProjWork1_DFC/hailoDFC/Harfiles/RN50_hailo_model.har
+2024-10-23 10:36:51,885 - INFO - client_runner.py:479 - Loading model script commands to RN50 from string
+2024-10-23 10:36:52,882 - IMPORTANT - sdk_backend.py:1009 - Starting Model Optimization
+2024-10-23 10:56:46,588 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/ProjWork1_DFC/hailoDFC/RN50_compiled_model.har
+2024-10-23 10:57:02,116 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/ProjWork1_DFC/hailoDFC/RN50_compiled_model.har
+2024-10-23 10:57:05,487 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/ProjWork1_DFC/hailoDFC/RN50_compiled_model.har
+2024-10-23 10:57:13,133 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/ProjWork1_DFC/hailoDFC/RN50_compiled_model.har
+2024-10-23 11:01:29,723 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 11:01:30,148 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.43)
+2024-10-23 11:01:32,135 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:02.41)
+2024-10-23 11:01:33,880 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:04.16)
+2024-10-23 11:01:34,141 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50/input_layer1'.
+2024-10-23 11:01:34,141 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-23 11:01:34,171 - INFO - parser.py:288 - Translation completed on ONNX model RN50 (completion time: 00:00:04.45)
+2024-10-23 11:01:34,787 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/ProjWork1_DFC/hailoDFC/Harfiles/RN50_hailo_model.har
+2024-10-23 11:07:27,504 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 11:07:27,881 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.38)
+2024-10-23 11:07:29,233 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.73)
+2024-10-23 11:08:56,325 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 11:08:56,787 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.46)
+2024-10-23 11:08:58,247 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.92)
+2024-10-23 11:08:59,693 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.37)
+2024-10-23 11:08:59,932 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50/input_layer1'.
+2024-10-23 11:08:59,933 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-23 11:08:59,959 - INFO - parser.py:288 - Translation completed on ONNX model RN50 (completion time: 00:00:03.63)
+2024-10-23 11:09:00,666 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/ProjWork1_DFC/hailoDFC/Harfiles/RN50_hailo_model.har
+2024-10-23 11:14:06,123 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 11:14:06,463 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.34)
+2024-10-23 11:14:07,908 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.79)
+2024-10-23 11:14:09,311 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.19)
+2024-10-23 11:14:09,558 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50/input_layer1'.
+2024-10-23 11:14:09,558 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-23 11:14:09,584 - INFO - parser.py:288 - Translation completed on ONNX model RN50 (completion time: 00:00:03.46)
+2024-10-23 11:14:10,197 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/ProjWork1_DFC/hailoDFC/Harfiles/RN50_hailo_model.har
+2024-10-23 11:39:46,529 - INFO - __init__.py:84 - First time Hailo Dataflow Compiler is being used. Checking system requirements... (this might take a few seconds)
+2024-10-23 11:39:47,343 - INFO - main.py:34 - Current Time: 11:39:47, 10/23/24
+2024-10-23 11:39:48,353 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 2.9%
+2024-10-23 11:39:48,353 - INFO - main.py:50 - Memory: Total: 31GB, Available: 25GB
+2024-10-23 11:39:48,353 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-47-generic
+2024-10-23 11:39:48,353 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-23 11:39:48,360 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-23 11:39:48,363 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-23 11:39:48,363 - INFO - main.py:109 - Running `hailo -h`
+2024-10-23 11:40:05,565 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 11:40:31,819 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 11:40:32,191 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.37)
+2024-10-23 11:40:33,605 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.79)
+2024-10-23 11:40:35,016 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.20)
+2024-10-23 11:41:01,796 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-23 11:41:02,861 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:01.06)
+2024-10-23 11:41:06,094 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:04.30)
+2024-10-23 11:41:09,606 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:07.81)
+2024-10-23 11:41:36,719 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 11:41:36,898 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.18)
+2024-10-23 11:41:38,153 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.43)
+2024-10-23 11:41:39,469 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.75)
+2024-10-23 11:41:55,591 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-23 11:41:56,403 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.81)
+2024-10-23 11:41:59,635 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:04.04)
+2024-10-23 11:42:03,393 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:07.80)
+2024-10-23 11:42:04,633 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50x4/input_layer1'.
+2024-10-23 11:42:04,633 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-23 11:42:04,819 - INFO - parser.py:288 - Translation completed on ONNX model RN50x4 (completion time: 00:00:09.23)
+2024-10-23 11:42:07,340 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/ProjWork1_DFC/hailoDFC/Harfiles/RN50x4_hailo_model.har
+2024-10-23 11:46:43,059 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 11:46:43,285 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.23)
+2024-10-23 11:46:44,529 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.47)
+2024-10-23 11:46:45,877 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:02.82)
+2024-10-23 11:48:17,783 - INFO - parser.py:158 - Translation started on ONNX model RN50x4
+2024-10-23 11:48:18,578 - INFO - parser.py:193 - Restored ONNX model RN50x4 (completion time: 00:00:00.80)
+2024-10-23 11:48:21,809 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:04.03)
+2024-10-23 11:48:25,493 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:07.71)
+2024-10-23 11:48:26,696 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50x4/input_layer1'.
+2024-10-23 11:48:26,696 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-23 11:48:26,888 - INFO - parser.py:288 - Translation completed on ONNX model RN50x4 (completion time: 00:00:09.11)
+2024-10-23 11:48:29,445 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/ProjWork1_DFC/hailoDFC/Harfiles/RN50x4_hailo_model.har
+2024-10-23 11:48:38,286 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 11:48:38,673 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.39)
+2024-10-23 11:48:40,075 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.79)
+2024-10-23 11:48:41,730 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.44)
+2024-10-23 11:48:42,419 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50/input_layer1'.
+2024-10-23 11:48:42,420 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-23 11:48:42,553 - INFO - parser.py:288 - Translation completed on ONNX model RN50 (completion time: 00:00:04.27)
+2024-10-23 11:48:44,238 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/ProjWork1_DFC/hailoDFC/Harfiles/RN50_hailo_model.har
+2024-10-23 11:48:57,434 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 11:48:57,815 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.38)
+2024-10-23 11:48:59,223 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.79)
+2024-10-23 11:49:00,619 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.19)
+2024-10-23 11:49:00,869 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50/input_layer1'.
+2024-10-23 11:49:00,869 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-23 11:49:00,895 - INFO - parser.py:288 - Translation completed on ONNX model RN50 (completion time: 00:00:03.46)
+2024-10-23 11:49:01,616 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/ProjWork1_DFC/hailoDFC/Harfiles/RN50_hailo_model.har
+2024-10-23 11:49:06,608 - INFO - main.py:34 - Current Time: 11:49:06, 10/23/24
+2024-10-23 11:49:07,620 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 3.0%
+2024-10-23 11:49:07,620 - INFO - main.py:50 - Memory: Total: 31GB, Available: 23GB
+2024-10-23 11:49:07,620 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-47-generic
+2024-10-23 11:49:07,621 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-23 11:49:07,630 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-23 11:49:07,633 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-23 11:49:07,633 - INFO - main.py:109 - Running `hailo visualizer Harfiles/RN50_hailo_model.har`
