@@ -9,7 +9,7 @@ print(onnx.__version__)
 chosen_hw_arch = "hailo8"
 
 onnx_model_name = "RN50"
-onnx_path = f"models/{onnx_model_name}.onnx"
+onnx_path = f"hailoDFC/models/{onnx_model_name}.onnx"
 
 runner = ClientRunner(hw_arch=chosen_hw_arch)
 
@@ -23,5 +23,5 @@ hn, npz = runner.translate_onnx_model(
     # net_input_shapes={"modelInput": [1, 3, 224, 224]}
 )
 
-hailo_model_har_name = f"Harfiles/{onnx_model_name}_hailo_model.har"
+hailo_model_har_name = f"hailoDFC/Harfiles/{onnx_model_name}_hailo_model.har"
 runner.save_har(hailo_model_har_name)

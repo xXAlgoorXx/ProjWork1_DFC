@@ -987,3 +987,27 @@
 2024-10-23 11:49:07,630 - INFO - main.py:60 - HailoRT Version: Not Installed
 2024-10-23 11:49:07,633 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
 2024-10-23 11:49:07,633 - INFO - main.py:109 - Running `hailo visualizer Harfiles/RN50_hailo_model.har`
+2024-10-23 12:52:12,977 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 12:54:24,317 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 12:54:28,095 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 12:55:20,872 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 12:55:33,220 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 12:55:36,712 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 12:55:55,542 - INFO - parser.py:158 - Translation started on ONNX model RN50
+2024-10-23 12:55:55,932 - INFO - parser.py:193 - Restored ONNX model RN50 (completion time: 00:00:00.39)
+2024-10-23 12:55:57,347 - INFO - parser.py:216 - Extracted ONNXRuntime meta-data for Hailo model (completion time: 00:00:01.80)
+2024-10-23 12:55:58,769 - INFO - parser.py:274 - Simplified ONNX model for a parsing retry attempt (completion time: 00:00:03.23)
+2024-10-23 12:55:59,054 - INFO - parser.py:373 - Start nodes mapped from original model: 'modelInput': 'RN50/input_layer1'.
+2024-10-23 12:55:59,054 - INFO - parser.py:374 - End nodes mapped from original model: '/attnpool/Squeeze'.
+2024-10-23 12:55:59,080 - INFO - parser.py:288 - Translation completed on ONNX model RN50 (completion time: 00:00:03.54)
+2024-10-23 12:55:59,738 - INFO - client_runner.py:1831 - Saved HAR to: /home/lukasschoepf/Documents/ProjWork1_DFC/hailoDFC/Harfiles/RN50_hailo_model.har
+2024-10-23 12:56:27,554 - INFO - main.py:34 - Current Time: 12:56:27, 10/23/24
+2024-10-23 12:56:28,562 - INFO - main.py:46 - CPU: Architecture: x86_64, Model: Intel(R) Core(TM) i7-14700, Number Of Cores: 28, Utilization: 2.6%
+2024-10-23 12:56:28,562 - INFO - main.py:50 - Memory: Total: 31GB, Available: 22GB
+2024-10-23 12:56:28,562 - INFO - main.py:54 - System info: OS: Linux, Kernel: 6.8.0-47-generic
+2024-10-23 12:56:28,563 - INFO - main.py:55 - Hailo DFC Version: 3.29.0
+2024-10-23 12:56:28,579 - INFO - main.py:60 - HailoRT Version: Not Installed
+2024-10-23 12:56:28,582 - INFO - main.py:76 - PCIe: No Hailo PCIe device was found
+2024-10-23 12:56:28,582 - INFO - main.py:109 - Running `hailo visualizer Harfiles/RN50_hailo_model.har`
+2024-10-23 12:56:58,726 - INFO - client_runner.py:479 - Loading model script commands to RN50 from string
+2024-10-23 12:56:59,108 - IMPORTANT - sdk_backend.py:1009 - Starting Model Optimization
