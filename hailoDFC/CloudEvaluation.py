@@ -1,27 +1,26 @@
 import os
-import skimage
-import IPython.display
 import matplotlib.pyplot as plt
 from PIL import Image
 import numpy as np
 import pandas as pd
-
-from collections import OrderedDict
 import torch
 from sklearn.metrics import accuracy_score, classification_report
-
 import seaborn as sns
 from sklearn.metrics import confusion_matrix
 from sklearn.preprocessing import LabelEncoder
 from collections import Counter
 from tqdm import tqdm
 from pathlib import Path
-
 import torch
 import clip
 from PIL import Image
-import onnx
-from onnx import helper
+import open_clip
+import sys
+
+# Own modules
+sys.path.append("/home/lukasschoepf/Documents/ProjWork1_DFC")
+
+import pathsToFolders as ptf #Controlls all paths
 
 def get_pred(input_folder, text1, text2, text3, preprocess,model):
 
@@ -54,7 +53,7 @@ def get_pred(input_folder, text1, text2, text3, preprocess,model):
         text = text1
         with torch.no_grad():
             
-            logits_per_image, logits_per_text = model(image, text)
+            logits_per_image, *_ = model(image, text)
             probs = logits_per_image.softmax(dim=-1).cpu().numpy()
 
         score_in = probs[0][0]
@@ -64,7 +63,7 @@ def get_pred(input_folder, text1, text2, text3, preprocess,model):
         text = text2
         with torch.no_grad():
 
-            logits_per_image, logits_per_text = model(image, text)
+            logits_per_image, *_ = model(image, text)
             probs = logits_per_image.softmax(dim=-1).cpu().numpy()
             # uncomment when processing 5 sentences
             #new_size = arr.shape[1] // 5
@@ -77,7 +76,7 @@ def get_pred(input_folder, text1, text2, text3, preprocess,model):
         text = text3
         with torch.no_grad():
             
-            logits_per_image, logits_per_text = model(image, text)
+            logits_per_image, *_ = model(image, text)
             probs = logits_per_image.softmax(dim=-1).cpu().numpy()
             # uncomment when processing 5 sentences
             #new_size = arr.shape[1] // 5
@@ -202,14 +201,9 @@ def printAndSaveHeatmap(df,model,outputfolder):
 # Main
 # ======================================================================= #
 
-models_to_ignore =  ["RN50","RN101"]
 
 def  main():
     device = "cuda" if torch.cuda.is_available() else "cpu"
-
-    datafolder = Path("../Data")
-    input_folder = datafolder / '02_data/hexagon_images/candolle_5patches'
-    evaluationFolder = datafolder / "Evaluation"
     
     ## From Lia
     # define text prompts
@@ -232,24 +226,34 @@ def  main():
     text2 = clip.tokenize(names2).to(device)
     text3 = clip.tokenize(names3).to(device)
 
+    print("Clip Models:",clip.available_models())
     # Evaluate every Resnet model
     resnetModels = []
-    for model in clip.available_models():
-        if "RN" in model:
-            resnetModels.append(model)
-    # resnetModels = [resmodel for resmodel in resnetModels if resmodel not in models_to_ignore]
+    for clipmodel in clip.available_models():
+        if "RN" in clipmodel:
+            resnetModels.append(clipmodel)
+
+    print("Open Clip Models:",open_clip.list_models())
+    for clipmodel in open_clip.list_models():
+        if "ResNet" in clipmodel and "Tiny" in clipmodel:
+            resnetModels.append(clipmodel)
 
     for modelname in tqdm(resnetModels,position=0,desc="Models"):
 
         # Path to csv
-        csv_path = evaluationFolder / f'pred_{modelname}_5patches.csv'
+        csv_path = ptf.evaluationFolder / f'pred_{modelname}_5patches.csv'
 
         #check if csv already exists
         if os.path.exists(csv_path):
             df_5patch = get_trueClass(pd.read_csv(csv_path))
         else:
-            model, preprocess = clip.load(modelname, device=device)
-            df_pred= get_pred(input_folder, text1, text2, text3,preprocess,model)
+            try:
+                if os.path.exists(ptf.tinyClipModels / f"modelname"):
+                    print(f"Model {modelname} available")
+                model,_, preprocess = open_clip.create_model_and_transforms(modelname, device=device,pretrained=str(ptf.tinyClipModels / f"{modelname}-LAION400M.pt"))
+            except:
+                model, preprocess = clip.load(modelname, device=device)
+            df_pred= get_pred(ptf.Dataset5Patch224px, text1, text2, text3,preprocess,model)
             df_pred.to_csv(csv_path, index=False)
             df_5patch = get_trueClass(pd.read_csv(csv_path))
         df = df_5patch.copy()
@@ -307,7 +311,7 @@ def  main():
         accuracy = accuracy_score(IO_true, IO_pred)
         # print(f'Accuracy: {accuracy:.3f}')
 
-        printAndSaveHeatmap(df,modelname,evaluationFolder)
+        printAndSaveHeatmap(df,modelname,ptf.evaluationFolder)
 
 if __name__ == "__main__":
     main()
