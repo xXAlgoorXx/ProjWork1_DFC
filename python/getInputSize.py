@@ -3,16 +3,16 @@ import open_clip
 import pathsToFolders as ptf
 
 
-# print("Clip Models:",clip.available_models())
-# # Evaluate every Resnet model
-# resnetModels = []
-# for clipmodel in clip.available_models():
-#     if "RN" in clipmodel:
-#         resnetModels.append(clipmodel)
+print("Clip Models:",clip.available_models())
+# Evaluate every Resnet model
+resnetModels = []
+for clipmodel in clip.available_models():
+    if "RN" in clipmodel:
+        resnetModels.append(clipmodel)
 
-# for modelname in resnetModels:
-#     model, _ = clip.load(modelname)
-#     print(f"{modelname}: {model.visual.input_resolution}")
+for modelname in resnetModels:
+    model, _ = clip.load(modelname)
+    print(f"{modelname}: {model.visual.input_resolution}")
 
 resnetModels = []
 print("Open Clip Models:",open_clip.list_models())

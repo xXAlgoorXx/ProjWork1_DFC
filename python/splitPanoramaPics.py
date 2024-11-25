@@ -1,9 +1,12 @@
 import pandas as pd
 import os
-from PIL import Image, ImageEnhance, ImageFilter
+from PIL import Image, ImageEnhance, ImageFilter, ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 import os
 import random
 from pathlib import Path
+import pathsToFolders as ptf
+from tqdm import tqdm
 
 '''
 Function to cut the image into patches with fixed width and height
@@ -55,23 +58,25 @@ def process_image(image_path, output_folder, num_patches):
 
     # reduce the resolution to 224x224 and save the images
     for idx, patch in enumerate(patches):
-        patch_resized = patch.resize((224, 224), resample=Image.LANCZOS)
+        # patch_resized = patch.resize((224, 224), resample=Image.LANCZOS)
         output_path = os.path.join(output_folder, f"{os.path.splitext(os.path.basename(image_path))[0]}_{idx}.jpg")
-        patch_resized.save(output_path)
+        patch.save(output_path)
 
-def main():
+# def main():
     # input and output folders paths
-    Datafolder = Path()
-    input_folder = "/scratch2/liawin/Master_Thesis/03_data/data_hex/candolle_img_all"
-    output_folder = "/scratch2/liawin/Master_Thesis/03_data/data_hex/candolle_test5"  
-    # number of patches you want to create
-    num_patches = 5  
+    # Datafolder = Path()
+    # input_folder = "/scratch2/liawin/Master_Thesis/03_data/data_hex/candolle_img_all"
+    # output_folder = "/scratch2/liawin/Master_Thesis/03_data/data_hex/candolle_test5"
+input_folder = ptf.DatasetPanorama
+output_folder = ptf.HexagonDataFolder / "candolle_5patch"
+# number of patches you want to create
+num_patches = 5  
 
-    # process each image in the input folder
-    for filename in os.listdir(input_folder):
-        if filename.endswith(".jpg"):
-            image_path = os.path.join(input_folder, filename)
-            process_image(image_path, output_folder, num_patches)
+# process each image in the input folder
+for filename in tqdm(os.listdir(input_folder)):
+    if filename.endswith(".jpg"):
+        image_path = os.path.join(input_folder, filename)
+        process_image(image_path, output_folder, num_patches)
 
-if __file__ == "__main__":
-    main()
+# if __file__ == "__main__":
+#     main()

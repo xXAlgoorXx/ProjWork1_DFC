@@ -2,8 +2,6 @@
 # file operations
 import json
 import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-
 import numpy as np
 import tensorflow as tf
 from IPython.display import SVG
@@ -26,12 +24,15 @@ try:
 except ImportError:
     BICUBIC = Image.BICUBIC
 
+
+
+
 harPath = Path("hailoDFC/Harfiles")
 datafolder = Path("../Data")
-input_folder = datafolder / '02_data/hexagon_images/candolle_5patches'
+input_folder = datafolder / '02_data/hexagon_images/candolle_5patches_224px'
 calibFolder = datafolder / "calibData"
 
-model_name = "RN50"
+model_name ="RN50_simple"
 
 def _convert_image_to_rgb(image):
     return image.convert("RGB")
@@ -59,10 +60,11 @@ def preproc(image, output_height=224, output_width=224, resize_side=256):
 
         return tf.squeeze(cropped_image)
 
-preprocess = transform(224)
+x_y_pixel = 288
+preprocess = transform(x_y_pixel)
 images_list = [img_name for img_name in os.listdir(input_folder) if os.path.splitext(img_name)[1] == ".jpg"]
-
-calib_dataset = np.zeros((len(images_list), 224, 224, 3))
+images_list = images_list[0:1024]
+calib_dataset = np.zeros((len(images_list), x_y_pixel, x_y_pixel, 3))
 for idx, img_name in enumerate(sorted(images_list)):
     img = Image.open(os.path.join(input_folder, img_name))
     # img = PILToTensor(img)
@@ -77,7 +79,7 @@ np.save(calibFolder / f"calib_set_{model_name}.npy", calib_dataset)
 hailo_model_har_name = f"{model_name}_hailo_model.har"
 hailo_model_har_path = harPath / hailo_model_har_name
 assert os.path.isfile(hailo_model_har_path), "Please provide valid path for HAR file"
-runner = ClientRunner(har=str(hailo_model_har_path),hw_arch="hailo8")
+runner = ClientRunner(har=str(hailo_model_har_path),hw_arch="hailo8l")
 # By default it uses the hw_arch that is saved on the HAR. For overriding, use the hw_arch flag.
 
 # Now we will create a model script, that tells the compiler to add a normalization on the beginning
@@ -99,3 +101,4 @@ runner.optimize(calib_dataset)
 # Save the result state to a Quantized HAR file
 quantized_model_har_path = f"{model_name}_quantized_model.har"
 runner.save_har(quantized_model_har_path)
+print(f"saved model at {quantized_model_har_path}")
