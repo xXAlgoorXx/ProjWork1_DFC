@@ -5,7 +5,7 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 import os
 import random
 from pathlib import Path
-import pathsToFolders as ptf
+import folderManagment.pathsToFolders as ptf
 from tqdm import tqdm
 
 '''

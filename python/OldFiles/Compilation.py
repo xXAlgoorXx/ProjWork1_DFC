@@ -5,7 +5,7 @@ import sys
 # Own modules
 sys.path.append("/home/lukasschoepf/Documents/ProjWork1_DFC")
 
-import pathsToFolders as ptf #Controlls all paths
+import folderManagment.pathsToFolders as ptf #Controlls all paths
 
 
 model_name = "RN50_simple"

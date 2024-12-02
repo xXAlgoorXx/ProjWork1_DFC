@@ -26,7 +26,7 @@ ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 # Own modules
 sys.path.append("/home/lukasschoepf/Documents/ProjWork1_DFC")
-import pathsToFolders as ptf  # Controlls all paths
+import folderManagment.pathsToFolders as ptf  # Controlls all paths
 
 def main(evalFodler, datafolder, use5Scentens=False):
     device = "cuda" if torch.cuda.is_available() else "cpu"

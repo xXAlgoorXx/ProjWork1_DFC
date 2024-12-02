@@ -13,7 +13,7 @@ from Finetune_utils import CandolleDataset, CLIPFineTuner,getTexttokens
 # Own modules
 sys.path.append("/home/lukasschoepf/Documents/ProjWork1_DFC")
 
-import pathsToFolders as ptf #Controlls all paths
+import folderManagment.pathsToFolders as ptf #Controlls all paths
 
 # OpenAI CLIP model and preprocessing
 model, preprocess = clip.load("ViT-B/32", jit=False)

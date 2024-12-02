@@ -19,7 +19,7 @@ from splitCompilation_utils import CompilerHelper
 # Own modules
 print(Path.cwd())
 sys.path.append(str(Path.cwd()))
-import pathsToFolders as ptf  # Controlls all paths #
+import folderManagment.pathsToFolders as ptf  # Controlls all paths #
 chosen_hw_arch = "hailo8l"
 
 har_path = ptf.HarPath

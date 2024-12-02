@@ -12,11 +12,11 @@ evaluationFolder2 = dataBaseFolder / "Evaluation2"
 evaluationFolder25Patch = evaluationFolder2 / "5Patch"
 evaluationFolder5Patch = evaluationFolder / "5Patch"
 evaluationFolderPanorama = evaluationFolder / "Panorama"
-onnxFolder = Path("hailoDFC/models/baseAndSimple")
+onnxFolder = Path("models/baseAndSimple")
 tinyClipModels = Path("tinyClipModels")
-HarPath = Path("hailoDFC/models/Harfiles")
-QuantizedPath = Path("hailoDFC/models/QuantizedModels")
-Hefpath = Path("hailoDFC/models/Heffiles")
+HarPath = Path("models/Harfiles")
+QuantizedPath = Path("models/QuantizedModels")
+Hefpath = Path("models/Heffiles")
 
 folders  = [dataBaseFolder,HexagonDataFolder,evaluationFolder,evaluationFolder5Patch,evaluationFolderPanorama,tinyClipModels,HarPath,QuantizedPath,onnxFolder,Hefpath]
 

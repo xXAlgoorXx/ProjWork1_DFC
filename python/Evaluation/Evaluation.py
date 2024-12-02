@@ -1,5 +1,5 @@
 from Evaluation_utils import get_max_class_with_threshold, get_pred, get_throughput, get_trueClass, find_majority_element, printAndSaveHeatmap, get_modelnames
-import pathsToFolders as ptf  # Controlls all paths
+import folderManagment.pathsToFolders as ptf  # Controlls all paths
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from torcheval.metrics import Throughput
 import torchvision.transforms as T

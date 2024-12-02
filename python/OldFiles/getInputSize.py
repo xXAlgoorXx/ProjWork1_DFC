@@ -1,6 +1,6 @@
 import clip
 import open_clip
-import pathsToFolders as ptf
+import folderManagment.pathsToFolders as ptf
 
 
 print("Clip Models:",clip.available_models())
