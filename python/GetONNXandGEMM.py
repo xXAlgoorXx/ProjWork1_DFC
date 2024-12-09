@@ -8,10 +8,13 @@ from onnx import numpy_helper
 import os
 import re
 import json
+import folderManagment.pathsToFolders as ptf
 
 
 def simplify_onnx_model(onnx_path):
-    """Simplify the ONNX model graph."""
+    """
+    Simplify the ONNX model graph.
+    """
     model = onnx.load(onnx_path)
     print(f"Simplifying ONNX model: {onnx_path}")
     simplified_model, check = onnxsim.simplify(model)
@@ -25,7 +28,9 @@ def simplify_onnx_model(onnx_path):
 
 
 def get_modelnames():
-    """Retrieve available CLIP and Tiny CLIP ResNet model names."""
+    """
+    Retrieve available CLIP and Tiny CLIP ResNet model names.
+    """
     clip_models = []
     tiny_clip_models = []
     for clipmodel in clip.available_models():
@@ -166,8 +171,8 @@ def get_GemmLayer(onnxPaths_list):
             "bias": bias.tolist(),
             "weights": weights.tolist(),
         }
-
-        with open(f'models/RestOfPath/gemmLayer_{name}.json', 'w') as f:
+        gemmpath = str(ptf.gemmpath / f"gemmLayer_{name}.json")
+        with open(gemmpath, 'w') as f:
             json.dump(gemm_layer, f)
 
 

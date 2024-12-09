@@ -51,6 +51,7 @@ def getTextembeddings(model, text, tokens):
     embeddedTextDict["embeddings"] = text_features.tolist()
     return embeddedTextDict
 
+
 def main():
     device = "cuda" if torch.cuda.is_available() else "cpu"
     use5Scentens = True
@@ -124,11 +125,11 @@ def main():
             textembeddings = {"1": dictlvl1, "2": dictlvl2,
                               "3": dictlvl3, "Use5Scentens": use5Scentens}
             if use5Scentens == True:
-                saveAsJson(textembeddings, ptf.evaluationFolder /
-                           "TextEmbeddings", f"textEmbeddings_{modelname}_5S")
+                saveAsJson(textembeddings, ptf.textEmbpath,
+                           f"textEmbeddings_{modelname}_5S")
             else:
-                saveAsJson(textembeddings, ptf.evaluationFolder /
-                           "TextEmbeddings", f"textEmbeddings_{modelname}")
+                saveAsJson(textembeddings, ptf.textEmbpath,
+                           f"textEmbeddings_{modelname}")
 
 
 if __name__ == "__main__":

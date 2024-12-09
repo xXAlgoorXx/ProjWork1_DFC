@@ -1,5 +1,5 @@
 hailoDFC/hailo_dataflow_compiler-3.29.0-py3-none-linux_x86_64.whl
-/hailoDFC/models
+/models
 *.log
 *.har
 *.hef
@@ -7,4 +7,7 @@ hailoDFC/hailo_dataflow_compiler-3.29.0-py3-none-linux_x86_64.whl
 *.jpg
 *.pyc
 *.onnx
+*.html
+*.csv
 /__pycache__
+adaround_cache_z8acohmp/*

@@ -1,5 +1,5 @@
-from Evaluation_utils import get_max_class_with_threshold, get_pred, get_throughput, get_trueClass, find_majority_element, printAndSaveHeatmap, get_modelnames
-import folderManagment.pathsToFolders as ptf  # Controlls all paths
+
+from Evaluation_utils import get_max_class_with_threshold, get_pred, get_throughput, get_trueClass, find_majority_element, printAndSaveHeatmap, get_modelnames, get_throughput_image
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from torcheval.metrics import Throughput
 import torchvision.transforms as T
@@ -13,6 +13,7 @@ from tqdm import tqdm
 from collections import Counter
 from sklearn.preprocessing import LabelEncoder
 import os
+
 import sys
 import time
 import matplotlib.pyplot as plt
@@ -22,6 +23,11 @@ import seaborn as sns
 from PIL import Image, ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
+cwd = os.getcwd()
+newPath = cwd + "/python"
+print(newPath)
+sys.path.append(newPath)
+import folderManagment.pathsToFolders as ptf  # Controlls all paths
 
 # Own modules
 sys.path.append("/home/lukasschoepf/Documents/ProjWork1_DFC")
@@ -187,7 +193,10 @@ def main(evalFodler, datafolder, use5Scentens=False):
     df_perf_acc["Accuracy"] = accuracy_models
 
     # Throughput evaluation
-    throughput_model = []
+    throughput_model_mean = []
+    throughput_model_std = []
+    throughput_model_mean_image = []
+    throughput_model_std_image = []
     for i, modelname in enumerate(tqdm(resnetModels, position=0, desc="Params")):
         try:
             if os.path.exists(ptf.tinyClipModels / f"modelname"):
@@ -208,12 +217,26 @@ def main(evalFodler, datafolder, use5Scentens=False):
             text1 = clip.tokenize(["indoor", "outdoor"]).to(device)
             text2 = clip.tokenize(names2).to(device)
             text3 = clip.tokenize(names3).to(device)
-        throughput = get_throughput(
+        throughput_mean,throughput_std = get_throughput(
             datafolder, text1, text2, text3, preprocess, model)
-        throughput_model.append(throughput)
-        print(throughput_model)
-    throughput_model = ['%.2f' % elem for elem in throughput_model]
-    df_perf_acc["Throughput (it/s)"] = throughput_model
+        throughput_model_mean.append(throughput_mean)
+        throughput_model_std.append(throughput_std)
+        print(f"\nThrouputs: {throughput_model_mean}")
+        
+        throughput_mean_image,throughput_std_image = get_throughput_image(
+            datafolder, text1, text2, text3, preprocess, model)
+        throughput_model_mean_image.append(throughput_mean_image)
+        throughput_model_std_image.append(throughput_std_image)
+        print(f"\nThrouputs Image: {throughput_model_mean_image}")
+
+    throughput_model_mean = ['%.2f' % elem for elem in throughput_model_mean]
+    throughput_model_mean_image = ['%.2f' % elem for elem in throughput_model_mean_image]
+    
+    df_perf_acc["Throughput (it/s)"] = throughput_model_mean
+    df_perf_acc["Throughput Image (it/s)"] = throughput_model_mean_image
+    df_perf_acc["Throughput std"] = throughput_model_std
+    df_perf_acc["Throughput Image std"] = throughput_model_std_image
+    
     df_perf_acc.to_csv(csv_path_perforemance, index=False)
 
 

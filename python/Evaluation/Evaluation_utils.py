@@ -16,6 +16,26 @@ import clip
 import open_clip
 
 
+class ThroughputMetric:
+    def __init__(self):
+        self.data = []
+
+    def update(self, num_processed, time):
+        """
+        iterations per second
+        """
+        self.data.append(num_processed / time)
+
+    def getMean(self):
+        return np.mean(self.data)
+
+    def getStd(self):
+        return np.std(self.data)
+
+    def compute(self):
+        return self.getMean(), self.getStd()
+
+
 def get_modelnames():
     # Evaluate every Resnet model
     resnetModels = []
@@ -206,7 +226,7 @@ def get_throughput(input_folder, text1, text2, text3, preprocess, model):
     Out: dataframe with the probability scores for each image
     '''
     model.eval()
-    metric = Throughput()
+    metric = ThroughputMetric()
     # List all files in the input folder
     files = os.listdir(input_folder)
 
@@ -248,6 +268,68 @@ def evalModel(model, image, text, use_5_Scentens=False):
     with torch.no_grad():
         # Encode image and text features separately
         image_features = model.encode_image(image)
+        text_features = model.encode_text(text)
+
+        # Normalize features for cosine similarity
+        image_features /= image_features.norm(dim=-1, keepdim=True)
+        text_features /= text_features.norm(dim=-1, keepdim=True)
+
+        # Compute cosine similarity (scaled by 100)
+        logits_per_image = 100.0 * (image_features @ text_features.T)
+        probs = logits_per_image.softmax(dim=-1).cpu().numpy()
+
+        # uncomment when processing 5 sentences
+        if use_5_Scentens:
+            new_size = probs.shape[1] // 5
+            probs = np.array([probs[0, i:i+5].sum()
+                             for i in range(0, probs.shape[1], 5)]).reshape(1, new_size)
+
+    return probs
+
+
+def get_throughput_image(input_folder, text1, text2, text3, preprocess, model):
+    '''
+    Function that calculates the probability that each image belongs to each class
+    In: path of the image folder, tokenized text prompts 
+    Out: dataframe with the probability scores for each image
+    '''
+    model.eval()
+    metric = ThroughputMetric()
+    # List all files in the input folder
+    files = os.listdir(input_folder)
+
+    # use less files for faster computing
+    files = files[0:100]
+
+    # Loop through each file
+    for file in tqdm(files, desc="Files", position=1):
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+
+        # Read the image
+        image_path = os.path.join(input_folder, file)
+        image = preprocess(Image.open(image_path)).unsqueeze(0).to(device)
+
+        ### FIRST DEGREE ###
+        text = text1
+        probs = evalModel_image(model, image, text, metric)
+        ### SECOND DEGREE (in) ###
+        text = text2
+        probs = evalModel_image(model, image, text, metric)
+
+        ### SECOND DEGREE (out) ###
+        text = text3
+        probs = evalModel_image(model, image, text, metric)
+
+    return metric.compute()
+
+
+def evalModel_image(model, image, text, metric, use_5_Scentens=False,):
+    with torch.no_grad():
+        # Encode image and text features separately
+        ts = time.monotonic()
+        image_features = model.encode_image(image)
+        elapsed_time = time.monotonic() - ts
+        metric.update(1, elapsed_time)
         text_features = model.encode_text(text)
 
         # Normalize features for cosine similarity

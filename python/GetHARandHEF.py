@@ -1,5 +1,5 @@
 # import the ClientRunner class from the hailo_sdk_client package
-from hailo_sdk_client import ClientRunner
+from hailo_sdk_client import ClientRunner,InferenceContext
 import onnx
 import sys
 import os
@@ -13,7 +13,7 @@ from PIL import Image
 from google.protobuf.json_format import MessageToDict
 from os import walk
 import time
-
+from tqdm import tqdm
 # Own modules
 import folderManagment.pathsToFolders as ptf  # Controlls all paths
 
@@ -27,8 +27,10 @@ try:
 except ImportError:
     BICUBIC = Image.BICUBIC
 
+
 def _convert_image_to_rgb(image):
     return image.convert("RGB")
+
 
 def transform(n_px):
     """
@@ -43,17 +45,19 @@ def transform(n_px):
                   (0.26862954, 0.26130258, 0.27577711)),
     ])
 
+
 def getONNXList(path):
     filenames = next(walk(path), (None, None, []))[2]
     filenames = [path + "/" + filename for filename in filenames]
     return filenames
+
 
 def compileHARamdHEF(onnxList):
     start_time = time.time()
     datafolder = ptf.dataBaseFolder
     input_folder = ptf.Dataset5Patch
     chosen_hw_arch = "hailo8l"
-    
+
     for modelPath in onnxList:
         har_path = ptf.HarPath
         hef_path = ptf.Hefpath
@@ -68,16 +72,17 @@ def compileHARamdHEF(onnxList):
                 model_name = model_name.split('_')[1]
             if "simplified" in model_name:
                 model_name = model_name.split('_')[0]
-                
+
         else:
             model_name = modelPath.split("/")[-1]
             if "modified" in model_name:
-                model_name = model_name.split('_')[1] + "_" + model_name.split('_')[2]   
+                model_name = model_name.split(
+                    '_')[1] + "_" + model_name.split('_')[2]
                 model_name = model_name.split('_')[1]
             else:
-                model_name = model_name.split('_')[0] + "_" + model_name.split('_')[1] 
-                       
-            
+                model_name = model_name.split(
+                    '_')[0] + "_" + model_name.split('_')[1]
+
         print(f"Take model from {model_path_simple}")
         hn, npz = runner.translate_onnx_model(
             model_path_simple,
@@ -94,14 +99,14 @@ def compileHARamdHEF(onnxList):
         preprocess = transform(x_y_pixel)
         images_list = [img_name for img_name in os.listdir(
             input_folder) if os.path.splitext(img_name)[1] == ".jpg"]
-        images_list = images_list[0:1024]
+        images_list = images_list[0:2048]
         calib_dataset = np.zeros((len(images_list),  x_y_pixel, x_y_pixel, 3))
-
-        for idx, img_name in enumerate(sorted(images_list)):
+        print("Prepare Calib Dataset")
+        for idx, img_name in tqdm(enumerate(sorted(images_list)),desc = "Calib Dataset"):
             img = Image.open(os.path.join(input_folder, img_name))
             img_preproc = preprocess(img)
             img_transposed = np.transpose(
-            img_preproc.numpy(), (1, 2, 0))  # change dim arangment for Hailo
+                img_preproc.numpy(), (1, 2, 0))  # change dim arangment for Hailo
             calib_dataset[idx, :, :, :] = img_transposed
 
         # Second, we will load our parsed HAR from the Parsing Tutorial
@@ -115,8 +120,16 @@ def compileHARamdHEF(onnxList):
             har=str(hailo_model_har_path), hw_arch=chosen_hw_arch)
 
         # Call Optimize to perform the optimization process
-        runner.optimize(calib_dataset)
+        runner.optimize_full_precision(calib_dataset)
+        #runner.optimize(calib_dataset)
+        # with runner.infer_context(InferenceContext.SDK_FP_OPTIMIZED) as ctx:
+        #     output = runner.infer(ctx, calib_dataset)
 
+        runner.optimize(calib_dataset)
+        print("Run Inference")
+        with runner.infer_context(InferenceContext.SDK_QUANTIZED) as ctx:
+            output = runner.infer(ctx, calib_dataset)
+            
         # Save the result state to a Quantized HAR file
         quantized_model_har_path = str(
             har_path / f"{model_name}_quantized_model.har")
@@ -140,16 +153,11 @@ def compileHARamdHEF(onnxList):
     print("Total Compilation Time:")
     print(f"{time.time() - start_time:.3} seconds")
 
+
 if __name__ == "__main__":
     onnxFiles_path = getONNXList("models/modified")
-    onnxFiles_path.remove("models/modified/modified_TinyCLIP-ResNet-19M_simplified.onnx")
-    onnxFiles_path.remove("models/modified/modified_TinyCLIP-ResNet-30M_simplified.onnx")
-    onnxFiles_path.remove("models/modified/modified_CLIP_RN50_simplified.onnx")
-    onnxFiles_path.remove("models/modified/modified_CLIP_RN101_simplified.onnx")
-    onnxFiles_path.remove("models/modified/modified_CLIP_RN50x16_simplified.onnx")
-    onnxFiles_path.remove("models/modified/modified_CLIP_RN50x64_simplified.onnx")
-    
-    
-    
+    onnxFiles_path = [path for path in onnxFiles_path if "Tiny" in path]
+
+
     print("Compile all ONNX models")
     compileHARamdHEF(onnxFiles_path)
