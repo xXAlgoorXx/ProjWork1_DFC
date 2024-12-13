@@ -1,5 +1,5 @@
 
-from Evaluation_utils import get_max_class_with_threshold, get_pred, get_throughput, get_trueClass, find_majority_element, printAndSaveHeatmap, get_modelnames, get_throughput_image
+from Evaluation_utils import get_max_class_with_threshold, get_pred, get_throughput, get_trueClass, find_majority_element, printAndSaveHeatmap, get_modelnames, get_throughput_image,printAndSaveClassReport,printClassificationReport
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from torcheval.metrics import Throughput
 import torchvision.transforms as T
@@ -155,6 +155,12 @@ def main(evalFodler, datafolder, use5Scentens=False):
         print(f'Accuracy: {accuracy:.3f}')
 
         printAndSaveHeatmap(df, modelname, evalFodler, use5Scentens)
+        
+        # Classification Report (Bar plot)
+        classificationReport = printClassificationReport(df, modelname)
+        del classificationReport['accuracy'] # Else visualisation doesnt work
+        df_classReport = pd.DataFrame.from_dict(classificationReport,orient='index')
+        printAndSaveClassReport(classificationReport,modelname,evalFodler)
 
     # Parameter Evaluation
     df_perf_acc = pd.DataFrame(
@@ -197,6 +203,7 @@ def main(evalFodler, datafolder, use5Scentens=False):
     throughput_model_std = []
     throughput_model_mean_image = []
     throughput_model_std_image = []
+    
     for i, modelname in enumerate(tqdm(resnetModels, position=0, desc="Params")):
         try:
             if os.path.exists(ptf.tinyClipModels / f"modelname"):

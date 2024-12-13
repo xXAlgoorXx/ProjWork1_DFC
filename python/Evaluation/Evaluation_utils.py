@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import clip
 import open_clip
-
+from pathlib import Path
 
 class ThroughputMetric:
     def __init__(self):
@@ -34,7 +34,6 @@ class ThroughputMetric:
 
     def compute(self):
         return self.getMean(), self.getStd()
-
 
 def get_modelnames():
     # Evaluate every Resnet model
@@ -464,3 +463,64 @@ def printAndSaveHeatmap(df, model, outputfolder, use_5_Scentens=False):
     plt.ylabel('True')
     plt.savefig(outputfolder / figname, dpi=600, bbox_inches='tight')
     plt.clf()
+
+def printClassificationReport(df,model):
+    # define specific sequence of class labels
+    class_sequence = ['In_Constr', 'In_Arch', 'Out_Constr', 'Forest', 'Out_Urban']
+
+    label_encoder = LabelEncoder()
+    df['Class3new_encoded'] = label_encoder.fit_transform(df['ClassTrue'])
+    df['y_pred_encoded'] = label_encoder.transform(df['y_pred'])
+    label_encoder.fit(class_sequence)
+    # compute the confusion matrix
+    y_true = df['Class3new_encoded']
+    y_pred = df['y_pred_encoded']
+    print(f"== {model} ==")
+    print(classification_report(y_true, y_pred,zero_division=0, target_names=class_sequence))
+    # precision, recall, fscore, support = precision_recall_fscore_support(y_true,y_pred)
+    
+    # print('precision: {}'.format(precision))
+    # print('recall: {}'.format(recall))
+    # print('fscore: {}'.format(fscore))
+    # print('support: {}'.format(support))
+    return classification_report(y_true, y_pred,zero_division=0, target_names=class_sequence,output_dict=True)
+
+def printAndSaveClassReport(classReportDict, modelname, outputFolder):
+    # Ensure outputFolder is a Path object
+    outputFolder = Path(outputFolder)
+    outputFolder.mkdir(parents=True, exist_ok=True)
+    
+    fig, ax = plt.subplots(figsize=(10, 5), layout='constrained')
+    
+    supportLabels = ["In_Arch","In_Constr","Forest","Out_Constr","Out_Urban"]
+    # Data preparation
+    x = np.arange(len(classReportDict))  # Positions for class groups
+    grouplabels = list(classReportDict.keys())
+    width = 1.0/(4 + 1) # Width of each bar
+    multiplier = 0
+    
+    supportAmount = 0
+    for label in supportLabels:
+        classDict = classReportDict[label]
+        supportAmount += classDict.get('support', 0)
+    
+    # Create bars
+    for label in next(iter(classReportDict.values())).keys():
+        measurements = [values[label] * 100/ supportAmount if label == 'support' else values[label] * 100 for values in classReportDict.values()]
+        offset = width * multiplier
+        rects = ax.bar(x + offset, measurements, width, label=label)
+        ax.bar_label(rects, fmt='%.1f', padding=3) 
+        multiplier += 1
+
+    # Add labels, title, and legend
+    ax.set_ylabel("Performance (%)")
+    ax.set_title(f'Class Report - {modelname}')
+    ax.set_xticks(x + (multiplier - 1) * width / 2, grouplabels)
+    ax.legend(loc='lower right', ncols=1)
+    ax.set_ylim(0, 110)
+    ax.set_yticks([0,20,40,60,80,100])
+    
+    # Save the figure
+    figname = f"ClassReport_{modelname}.png"
+    fig.savefig(outputFolder / figname, dpi=600, bbox_inches='tight')
+    plt.close(fig)  # Close the figure to free resources

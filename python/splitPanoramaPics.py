@@ -70,7 +70,7 @@ def process_image(image_path, output_folder, num_patches):
 input_folder = ptf.DatasetPanorama
 output_folder = ptf.HexagonDataFolder / "candolle_5patch"
 # number of patches you want to create
-num_patches = 5  
+num_patches = 5
 
 # process each image in the input folder
 for filename in tqdm(os.listdir(input_folder)):

@@ -1,3 +1,4 @@
+
 from torchvision.transforms import Compose, Resize, CenterCrop, ToTensor, Normalize, PILToTensor
 import onnxruntime as ort
 import clip
@@ -15,8 +16,8 @@ import sys
 from pathlib import Path
 
 sys.path.append(str(Path.cwd() / "python"))
-import folderManagment.pathsToFolders as ptf  # Controlls all paths
 # Own modules
+import folderManagment.pathsToFolders as ptf  # Controlls all paths
 # preprocessing
 
 try:
@@ -124,39 +125,41 @@ class RestOfGraph:
         print(self.bias - bias2)
         print(self.weight - weights2)
 
-def findBestIndex(img_path, onnx_path,inputSize,postprocess_json,text):
+
+def findBestIndex(img_path, onnx_path, inputSize, postprocess_json, text):
     img_path = img_path
     x_y_pixel = inputSize
     preprocess = transform(x_y_pixel)
-    
+
     image = preprocess(Image.open(testImage)).unsqueeze(0)
     session = ort.InferenceSession(onnx_path)
     postProcess = RestOfGraph(postprocess_json)
-    
-     # Run inference
+
+    # Run inference
     imageEmb_onnx = session.run(None, {"input": image.numpy()})
     transpose_ouput = np.array(imageEmb_onnx).reshape(50, -1)
     postp_onnx_50 = postProcess(transpose_ouput)
-    
+
     with torch.no_grad():
         maxProb = 0
         maxIndex = 0
-        for i,postp_onnx in enumerate(postp_onnx_50):
-            
+        for i, postp_onnx in enumerate(postp_onnx_50):
+
             image_features = torch.tensor(postp_onnx, dtype=torch.float32)
             text_features = model.encode_text(text)
             image_features /= image_features.norm(dim=-1, keepdim=True)
             text_features /= text_features.norm(dim=-1, keepdim=True)
 
-            text_probs = (100.0 * image_features @ text_features.T).softmax(dim=-1)
+            text_probs = (100.0 * image_features @
+                          text_features.T).softmax(dim=-1)
             if text_probs[1] > maxProb:
                 maxProb = text_probs[1]
                 maxIndex = i
-    
-    return maxIndex,maxProb
 
-    
-def compareTinyCLip(img_path,onnx_path, onnxMod_path, har_path, cHar_path, qHar_path, inputSize, postprocess_json, model, text):
+    return maxIndex, maxProb
+
+
+def compareTinyCLip(img_path, onnx_path, onnxMod_path, har_path, cHar_path, qHar_path, inputSize, postprocess_json, model, text):
     img_path = img_path
     model_har_path = har_path
     compiled_model_har_path = cHar_path
@@ -166,21 +169,23 @@ def compareTinyCLip(img_path,onnx_path, onnxMod_path, har_path, cHar_path, qHar_
     preprocess = transform(x_y_pixel)
     model.eval()
     index = 0
-    
+
     image = preprocess(Image.open(img_path)).unsqueeze(0)
 
     session = ort.InferenceSession(onnxMod_path)
     session2 = ort.InferenceSession(onnx_path)
     postProcess = RestOfGraph(postprocess_json)
-    
+
     imageEmb_onnx2 = session2.run(None, {"input": image.numpy()})
 
     # Run inference
     imageEmb_onnx = session.run(None, {"input": image.numpy()})
-    transpose_ouput = np.array(imageEmb_onnx).reshape(50, -1)
+    transpose_ouput = np.array(imageEmb_onnx)[0]
+    transpose_ouput = np.transpose(transpose_ouput, (0, 2, 1, 3))
+    transpose_ouput = transpose_ouput.reshape(1, 50, 22*64)
     postp_onnx_50 = postProcess(transpose_ouput)
-    postp_onnx =postp_onnx_50[index]
-    
+    postp_onnx = postp_onnx_50[:, index]
+
     print("Prepare Calib Dataset")
     calib_data = np.zeros((1,  x_y_pixel, x_y_pixel, 3))
     img_preproc = image.squeeze()
@@ -226,7 +231,7 @@ def compareTinyCLip(img_path,onnx_path, onnxMod_path, har_path, cHar_path, qHar_
 
     print("Label probs:", text_probs)  # prints: [[1., 0., 0.]]
 
-    print("\n=== TinyCLIP ONNX Modified===")
+    print("\n=== TinyCLIP ONNX Modified ===")
     with torch.no_grad():
         image_features = torch.tensor(postp_onnx, dtype=torch.float32)
         text_features = model.encode_text(text)
@@ -236,10 +241,11 @@ def compareTinyCLip(img_path,onnx_path, onnxMod_path, har_path, cHar_path, qHar_
         text_probs = (100.0 * image_features @ text_features.T).softmax(dim=-1)
 
     print("Label probs:", text_probs)  # prints: [[1., 0., 0.]]
-    
+
     print("\n=== TinyCLIP ONNX ===")
     with torch.no_grad():
-        image_features = torch.tensor(np.array(imageEmb_onnx2), dtype=torch.float32)
+        image_features = torch.tensor(
+            np.array(imageEmb_onnx2), dtype=torch.float32)
         text_features = model.encode_text(text)
         image_features /= image_features.norm(dim=-1, keepdim=True)
         text_features /= text_features.norm(dim=-1, keepdim=True)
@@ -283,7 +289,6 @@ def compareTinyCLip(img_path,onnx_path, onnxMod_path, har_path, cHar_path, qHar_
     print("Label probs:", text_probs)  # prints: [[1., 0., 0.]]
 
 
-
 def compareCLip(img_path, onnx_path, har_path, cHar_path, qHar_path, inputSize, postprocess_json, model, text):
     img_path = img_path
     model_har_path = har_path
@@ -303,9 +308,7 @@ def compareCLip(img_path, onnx_path, har_path, cHar_path, qHar_path, inputSize, 
     imageEmb_onnx = session.run(None, {"input": image.numpy()})
     transpose_ouput = np.array(imageEmb_onnx).reshape(1, -1)
     postp_onnx = postProcess(transpose_ouput)
-    
-    
-    
+
     print("Prepare Calib Dataset")
     calib_data = np.zeros((1,  x_y_pixel, x_y_pixel, 3))
     img_preproc = image.squeeze()
@@ -398,7 +401,7 @@ def compareCLip(img_path, onnx_path, har_path, cHar_path, qHar_path, inputSize, 
 
 if __name__ == "__main__":
     device = "cuda" if torch.cuda.is_available() else "cpu"
-    classes = ["a Human", "a cat", "a dog","a white cat", "a small dog"]
+    classes = ["a Human", "a cat", "a dog", "a white cat", "a small dog"]
 
     # TinyClip
     testImage = "models/temp/images.jpeg"
@@ -429,7 +432,7 @@ if __name__ == "__main__":
         inputSize=224,
         postprocess_json=postprocess_json,
         text=text,)
-    
+
     # print(findBestIndex(img_path = testImage,
     #                     onnx_path = model_path,
     #                     inputSize = 224,
@@ -445,15 +448,13 @@ if __name__ == "__main__":
     model, preprocess = clip.load('RN50x4', device)
     text = clip.tokenize(classes)
 
-    # print("\nCLIP RN50x4")
-    # compareCLip(img_path=testImage,
-    #             onnx_path=model_path,
-    #             har_path=model_har_path,
-    #             cHar_path=compiled_model_har_path,
-    #             qHar_path=quantized_model_har_path,
-    #             model=model,
-    #             inputSize=288,
-    #             postprocess_json=postprocess_json,
-    #             text=text,)
-
-    
+    print("\nCLIP RN50x4")
+    compareCLip(img_path=testImage,
+                onnx_path=model_path,
+                har_path=model_har_path,
+                cHar_path=compiled_model_har_path,
+                qHar_path=quantized_model_har_path,
+                model=model,
+                inputSize=288,
+                postprocess_json=postprocess_json,
+                text=text,)
