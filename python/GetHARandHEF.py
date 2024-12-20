@@ -1,19 +1,15 @@
 # import the ClientRunner class from the hailo_sdk_client package
 from hailo_sdk_client import ClientRunner,InferenceContext
 import onnx
-import sys
 import os
 import numpy as np
-import torch
-import clip
-import open_clip
-from pathlib import Path
 from onnxsim import simplify
 from PIL import Image
 from google.protobuf.json_format import MessageToDict
 from os import walk
 import time
 from tqdm import tqdm
+import random
 # Own modules
 import folderManagment.pathsToFolders as ptf  # Controlls all paths
 
@@ -45,6 +41,74 @@ def transform(n_px):
                   (0.26862954, 0.26130258, 0.27577711)),
     ])
 
+def getxImagesPerClass(dataFolder,x):
+    """
+    Images in output dict is randomly shuffled
+    """
+    # define second degree classes 
+    in_arch = [7,10,18,27,29,32,36,1,28,6,33,40,30,31,24]#[7,18,31]#
+    out_constr = [8,16,22]#[16]#
+    in_constr = [9,13,39,12] #[12]#
+    out_urb = [2,20,38,26,15,42,44,4,23]#[15,2,23]#
+    out_forest = [17]
+    
+    in_arch_list = []
+    out_constr_list = []
+    in_constr_list = []
+    out_urb_list = []
+    out_forest_list = []
+    
+    files = os.listdir(dataFolder)
+    for file in files:
+        classNumber = int(file.split("_")[1])
+        if classNumber in in_arch:
+            in_arch_list.append(file)
+            continue
+        if classNumber in out_constr:
+            out_constr_list.append(file)
+            continue
+        if classNumber in in_constr:
+            in_constr_list.append(file)
+            continue
+        if classNumber in out_urb:
+            out_urb_list.append(file)
+            continue
+        if classNumber in out_forest:
+            out_forest_list.append(file)
+            continue
+        print(f"{file} no match")    
+    
+    random.shuffle(in_arch_list)
+    random.shuffle(out_constr_list)
+    random.shuffle(in_constr_list)
+    random.shuffle(out_urb_list)
+    random.shuffle(out_forest_list)
+    
+    in_arch_list = in_arch_list[:x]
+    out_constr_list = out_constr_list[:x]
+    in_constr_list = in_constr_list[:x]
+    out_urb_list = out_urb_list[:x]
+    out_forest_list = out_forest_list[:x]
+    
+    imagedict = {"in_arch":in_arch_list,
+                 "out_constr":out_constr_list,
+                 "in_constr":in_constr_list,
+                 "out_urb":out_urb_list,
+                 "out_forest":out_forest_list
+                 }
+    
+    return imagedict
+
+def getCalbirationData(dataFolder,x):
+    """
+    Get calibration data
+    """
+    imagedict = getxImagesPerClass(dataFolder,x)
+    calibData = []
+    for value in imagedict.values():
+        calibData.append(value)
+    calibData = [item for imageList in calibData for item in imageList]#flatten list
+    return calibData
 
 def getONNXList(path):
     filenames = next(walk(path), (None, None, []))[2]
@@ -99,8 +163,10 @@ def compileHARamdHEF(onnxList):
         preprocess = transform(x_y_pixel)
         images_list = [img_name for img_name in os.listdir(
             input_folder) if os.path.splitext(img_name)[1] == ".jpg"]
-        images_list = images_list[0:2048]
+        # images_list = images_list[0:2048]
+        # images_list = getCalbirationData(input_folder,13)
         calib_dataset = np.zeros((len(images_list),  x_y_pixel, x_y_pixel, 3))
+        
         print("Prepare Calib Dataset")
         for idx, img_name in tqdm(enumerate(sorted(images_list)),desc = "Calib Dataset"):
             img = Image.open(os.path.join(input_folder, img_name))
@@ -124,11 +190,16 @@ def compileHARamdHEF(onnxList):
         #runner.optimize(calib_dataset)
         # with runner.infer_context(InferenceContext.SDK_FP_OPTIMIZED) as ctx:
         #     output = runner.infer(ctx, calib_dataset)
+        # Batch size is 8 by default
+        alls_lines = f"model_optimization_config(calibration, batch_size=16, calibset_size={len(images_list)})\n"
+
+        # Load the model script to ClientRunner so it will be considered on optimization
+        runner.load_model_script(alls_lines)
 
         runner.optimize(calib_dataset)
-        print("Run Inference")
-        with runner.infer_context(InferenceContext.SDK_QUANTIZED) as ctx:
-            output = runner.infer(ctx, calib_dataset)
+        # print("Run Inference")
+        # with runner.infer_context(InferenceContext.SDK_QUANTIZED) as ctx:
+        #     output = runner.infer(ctx, calib_dataset)
             
         # Save the result state to a Quantized HAR file
         quantized_model_har_path = str(

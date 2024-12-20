@@ -23,7 +23,7 @@ try:
 except ImportError:
     BICUBIC = Image.BICUBIC
 
-model_name = "TinyClip-19M-16Bit"
+model_name = "TinyClip-19M-16Bit-opt2"
 datafolder = ptf.dataBaseFolder
 input_folder = ptf.Dataset5Patch
 calibFolder = datafolder / "calibData"
@@ -60,16 +60,16 @@ images_list = [img_name for img_name in os.listdir(
 images_list = images_list[0:2048]
 calib_dataset = np.zeros((len(images_list),  x_y_pixel, x_y_pixel, 3))
 
-# for idx, img_name in tqdm(enumerate(sorted(images_list))):
-#     img = Image.open(os.path.join(input_folder, img_name))
-#     # img = PILToTensor(img)
-#     img_preproc = preprocess(img)
-#     img_transposed = np.transpose(img_preproc.numpy(), (1, 2, 0))
-#     # input_data = (img_transposed * 255).astype(np.uint8)  # Assuming image is already normalized
-#     calib_dataset[idx, :, :, :] = img_transposed
-calib_dataset = np.load(calibFolder / f"calib_set_{model_name}.npy")
-np.save(calibFolder / f"calib_set_{model_name}.npy", calib_dataset)
+for idx, img_name in tqdm(enumerate(sorted(images_list))):
+    img = Image.open(os.path.join(input_folder, img_name))
+    # img = PILToTensor(img)
+    img_preproc = preprocess(img)
+    img_transposed = np.transpose(img_preproc.numpy(), (1, 2, 0))
+    # input_data = (img_transposed * 255).astype(np.uint8)  # Assuming image is already normalized
+    calib_dataset[idx, :, :, :] = img_transposed
 
+np.save(calibFolder / f"calib_set_{model_name}.npy", calib_dataset)
+calib_dataset = np.load(calibFolder / f"calib_set_{model_name}.npy")
 # Second, we will load our parsed HAR from the Parsing Tutorial
 
 hailo_model_har_path = f"models/Harfiles/TinyCLIP-ResNet-19M_hailo_model.har"
@@ -78,11 +78,27 @@ assert os.path.isfile(
 print(f"Model from {hailo_model_har_path}")
 runner = ClientRunner(har=str(hailo_model_har_path), hw_arch=chosen_hw_arch)
 
-# Batch size is 8 by default
-alls_lines = [#"model_optimization_config(compression_params, auto_16bit_weights_ratio=0)\n",
-              "model_optimization_flavor(optimization_level=2)\n",
-              "model_optimization_config(calibration, batch_size=16, calibset_size=2048)\n",]  # From tutorial
+def createLayerScripts(x):
+    scriptList = []
+    for x in range(1,x):
+        scriptList.append(f'quantization_param(conv{x}, precision_mode=a16_w16)\n')
+        
+    return scriptList
+        
+convScript = createLayerScripts(56)
 
+# Batch size is 8 by default
+alls_lines = ['quantization_param(input_layer1, precision_mode=a16_w16)\n',
+              'quantization_param({ew_add*}, precision_mode=a16_w16)\n',
+              'quantization_param({avgpool*}, precision_mode=a16_w16)\n',
+              'quantization_param({matmul*}, precision_mode=a16_w16)\n',
+              #'quantization_param({conv*}, precision_mode=a16_w16)\n',
+              'quantization_param({format_conversion*}, precision_mode=a16_w16)\n',
+              "model_optimization_flavor(optimization_level=2)\n",
+              "model_optimization_config(calibration, batch_size=16, calibset_size=2048)\n",
+              ]  # From tutorial
+
+alls_lines.extend(convScript)
 # Normalize((0.48145466, 0.4578275, 0.40821073), (0.26862954, 0.26130258, 0.27577711)), # From Lia
 # alls = "normalization1 = normalization([0.48145466, 0.4578275, 0.40821073], [0.26862954, 0.26130258, 0.27577711])\n"
 
@@ -96,3 +112,15 @@ runner.optimize(calib_dataset)
 quantized_model_har_path = str(har_path / f"{model_name}_quantized_model.har")
 runner.save_har(quantized_model_har_path)
 print(f"saved model at {quantized_model_har_path}")
+
+
+runner = ClientRunner(har=str(quantized_model_har_path), hw_arch=chosen_hw_arch)
+hef = runner.compile()
+
+
+file_name = str(hef_path / f"{model_name}.hef")
+with open(file_name, "wb") as f:
+    f.write(hef)
+
+har_path = ptf.HarPath / f"{model_name}_compiled_model.har"
+runner.save_har(har_path)
