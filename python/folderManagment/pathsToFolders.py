@@ -10,6 +10,7 @@ Dataset5Patch224px = HexagonDataFolder / "candolle_5patches_224px"
 DatasetPanorama = HexagonDataFolder / "candolle_panorama"
 evalBaseFolder = Path("Data")
 evaluationFolder = evalBaseFolder / "Evaluation"
+evaluationFolder2 = evalBaseFolder / "Evaluation2"
 evaluationFolder5Patch = evaluationFolder / "5Patch"
 evaluationFolderPanorama = evaluationFolder / "Panorama"
 onnxFolder = modelsBasefolder / "baseAndSimple"

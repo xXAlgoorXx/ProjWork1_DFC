@@ -248,7 +248,7 @@ def main(evalFodler, datafolder, use5Scentens=False):
 
 
 if __name__ == "__main__":
-    use5Scentens = False
+    use5Scentens = True
     evalFodler = ptf.evaluationFolder5Patch
     datafolder = ptf.Dataset5Patch
     main(evalFodler, datafolder, use5Scentens)

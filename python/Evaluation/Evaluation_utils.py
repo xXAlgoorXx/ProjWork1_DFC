@@ -49,7 +49,17 @@ def get_modelnames():
     return resnetModels
 
 
-def get_pred2(input_folder, text1, text2, text3, preprocess, model, use5Scentens=False):
+def get_pred2(input_folder,
+             indoor_text,
+             outdoor_text,
+             construction_in_text,
+             architectural_text,
+             construction_out_text,
+             urban_text,
+             forrest_text,
+             preprocess,
+             model,
+             use5Scentens=False):
     '''
     Function that calculates the probability that each image belongs to each class
     In: path of the image folder, tokenized text prompts 
@@ -58,9 +68,7 @@ def get_pred2(input_folder, text1, text2, text3, preprocess, model, use5Scentens
     model.eval()
     # List all files in the input folder
     files = os.listdir(input_folder)
-    text = torch.cat((text1, text2, text3), 0)
-    startNames2 = len(text1)
-    startNames3 = len(text1) + len(text2)
+
     in_list = []
     out_list = []
     in_arch_list = []
@@ -77,34 +85,61 @@ def get_pred2(input_folder, text1, text2, text3, preprocess, model, use5Scentens
         image_path = os.path.join(input_folder, file)
         image = preprocess(Image.open(image_path)).unsqueeze(0).to(device)
         ts = time.monotonic()
+        ### Indoor / Outdoor ###
+        text = torch.cat((indoor_text,outdoor_text))
 
         probs = evalModel(model, image, text, False)
 
-        score_in = probs[0][0]
+        score_in = (probs[0][0]
+                    + probs[0][1]
+                    + probs[0][2]
+                    + probs[0][3]
+                    + probs[0][4])
+        score_out = (probs[0][5]
+                    + probs[0][6]
+                    + probs[0][7]
+                    + probs[0][8]
+                    + probs[0][9])
 
-        score_out = probs[0][1]
+        
 
-        score_in_arch = (probs[0][startNames2 + 0]
-                         + probs[0][startNames2 + 1]
-                         + probs[0][startNames2 + 2]
-                         + probs[0][startNames2 + 3]
-                         + probs[0][startNames2 + 4]
-                         + probs[0][startNames2 + 5]
-                         + probs[0][startNames2 + 6])
+        ### SECOND DEGREE (in) ###
+        text = torch.cat((architectural_text,construction_in_text))
+        probs = evalModel(model, image, text, use5Scentens)
 
-        score_in_constr = (probs[0][startNames2 + 7]
-                           + probs[0][startNames2 + 8]
-                           + probs[0][startNames2 + 9])
+        score_in_arch = (probs[0][0]
+                         + probs[0][1]
+                         + probs[0][2]
+                         + probs[0][3]
+                         + probs[0][4])
 
-        score_out_constr = probs[0][startNames3]
+        score_in_constr = (probs[0][5]
+                           + probs[0][6]
+                           + probs[0][7]
+                           + probs[0][8]
+                           + probs[0][9])
 
-        score_out_urb = (probs[0][startNames3 + 1]
-                         + probs[0][startNames3 + 2]
-                         + probs[0][startNames3 + 3]
-                         + probs[0][startNames3 + 4]
-                         + probs[0][startNames3 + 5])
+        ### SECOND DEGREE (out) ###
+        text = torch.cat((construction_out_text,urban_text,forrest_text))
+        probs = evalModel(model, image, text, use5Scentens)
 
-        score_out_for = probs[0][startNames3 + 6]
+        score_out_constr = (probs[0][0]
+                         + probs[0][1]
+                         + probs[0][2]
+                         + probs[0][3]
+                         + probs[0][4])
+
+        score_out_urb = (probs[0][5]
+                           + probs[0][6]
+                           + probs[0][7]
+                           + probs[0][8]
+                           + probs[0][9])
+
+        score_out_for = (probs[0][10]
+                           + probs[0][11]
+                           + probs[0][12]
+                           + probs[0][13]
+                           + probs[0][14])
 
         in_list.append(score_in)
         out_list.append(score_out)
@@ -262,6 +297,59 @@ def get_throughput(input_folder, text1, text2, text3, preprocess, model):
 
     return metric.compute()
 
+def get_throughput2(input_folder,
+                    indoor_text,
+                    outdoor_text,
+                    construction_in_text,
+                    architectural_text,
+                    construction_out_text,
+                    urban_text,
+                    forrest_text,
+                    preprocess,
+                    model,
+                    use5Scentens=False):
+    '''
+    Function that calculates the probability that each image belongs to each class
+    In: path of the image folder, tokenized text prompts 
+    Out: dataframe with the probability scores for each image
+    '''
+    model.eval()
+    metric = ThroughputMetric()
+    # List all files in the input folder
+    files = os.listdir(input_folder)
+
+    # use less files for faster computing
+    files = files[0:100]
+
+    # Loop through each file
+    for file in tqdm(files, desc="Files", position=1):
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+        # Read the image
+        image_path = os.path.join(input_folder, file)
+        image = preprocess(Image.open(image_path)).unsqueeze(0).to(device)
+        
+        ### Indoor / Outdoor ###
+        text = torch.cat((indoor_text,outdoor_text))
+        ts = time.monotonic()
+        probs = evalModel(model, image, text, False)
+        elapsed_time = time.monotonic() - ts
+        metric.update(1, elapsed_time)
+        
+        ### SECOND DEGREE (in) ###
+        text = torch.cat((architectural_text,construction_in_text))
+        ts = time.monotonic()
+        probs = evalModel(model, image, text, use5Scentens)
+        elapsed_time = time.monotonic() - ts
+        metric.update(1, elapsed_time)
+        
+        ### SECOND DEGREE (out) ###
+        text = torch.cat((construction_out_text,urban_text,forrest_text))
+        ts = time.monotonic()
+        probs = evalModel(model, image, text, use5Scentens)
+        elapsed_time = time.monotonic() - ts
+        metric.update(1, elapsed_time)
+
+    return metric.compute()
 
 def evalModel(model, image, text, use_5_Scentens=False):
     with torch.no_grad():
@@ -321,6 +409,51 @@ def get_throughput_image(input_folder, text1, text2, text3, preprocess, model):
 
     return metric.compute()
 
+def get_throughput_image2(input_folder,
+                        indoor_text,
+                        outdoor_text,
+                        construction_in_text,
+                        architectural_text,
+                        construction_out_text,
+                        urban_text,
+                        forrest_text,
+                        preprocess,
+                        model,
+                        use5Scentens=False):
+    '''
+    Function that calculates the probability that each image belongs to each class
+    In: path of the image folder, tokenized text prompts 
+    Out: dataframe with the probability scores for each image
+    '''
+    model.eval()
+    metric = ThroughputMetric()
+    # List all files in the input folder
+    files = os.listdir(input_folder)
+
+    # use less files for faster computing
+    files = files[0:100]
+
+    # Loop through each file
+    for file in tqdm(files, desc="Files", position=1):
+        device = "cuda" if torch.cuda.is_available() else "cpu"
+
+        # Read the image
+        image_path = os.path.join(input_folder, file)
+        image = preprocess(Image.open(image_path)).unsqueeze(0).to(device)
+
+        ### FIRST DEGREE ###
+        text = torch.cat((indoor_text,outdoor_text))
+        probs = evalModel_image(model, image, text, metric)
+        
+        ### SECOND DEGREE (in) ###
+        text = torch.cat((architectural_text,construction_in_text))
+        probs = evalModel_image(model, image, text, metric)
+
+        ### SECOND DEGREE (out) ###
+        text = torch.cat((construction_out_text,urban_text,forrest_text))
+        probs = evalModel_image(model, image, text, metric)
+
+    return metric.compute()
 
 def evalModel_image(model, image, text, metric, use_5_Scentens=False,):
     with torch.no_grad():

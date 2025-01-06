@@ -16,6 +16,7 @@ import sys
 from pathlib import Path
 
 sys.path.append(str(Path.cwd() / "python"))
+
 # Own modules
 import folderManagment.pathsToFolders as ptf  # Controlls all paths
 # preprocessing
@@ -124,6 +125,21 @@ class RestOfGraph:
         print("CHECK")
         print(self.bias - bias2)
         print(self.weight - weights2)
+
+class RestOfGraphOnnx:
+    """
+    GemmLayer which got cut off
+    """
+    def __init__(self,onnx_path):
+        self.session = ort.InferenceSession(onnx_path)
+        
+    def __call__(self,input):
+        # input = np.array(list(input.values())[0]).squeeze()
+        if input.ndim == 1:
+            input = input[np.newaxis,:]
+        result = self.session.run(None, {"/attnpool/Reshape_7_output_0": input})
+        result = np.array(result).squeeze(0)
+        return result
 
 
 def findBestIndex(img_path, onnx_path, inputSize, postprocess_json, text):
@@ -263,7 +279,7 @@ def compareTinyCLip(img_path, onnx_path, onnxMod_path, har_path, cHar_path, qHar
 
         text_probs = (100.0 * image_features @ text_features.T).softmax(dim=-1)
 
-    print("Label probs:", text_probs)  # prints: [[1., 0., 0.]]
+    print("Label probs:", text_probs.tolist())  # prints: [[1., 0., 0.]]
 
     print("\n=== TinyCLIP HAR Compiled ===")
     with torch.no_grad():
@@ -274,7 +290,7 @@ def compareTinyCLip(img_path, onnx_path, onnxMod_path, har_path, cHar_path, qHar
 
         text_probs = (100.0 * image_features @ text_features.T).softmax(dim=-1)
 
-    print("Label probs:", text_probs)  # prints: [[1., 0., 0.]]
+    print("Label probs:", text_probs.tolist())  # prints: [[1., 0., 0.]]
 
     print("\n=== TinyCLIP HAR Quantized ===")
     with torch.no_grad():
@@ -286,7 +302,7 @@ def compareTinyCLip(img_path, onnx_path, onnxMod_path, har_path, cHar_path, qHar
 
         text_probs = (100.0 * image_features @ text_features.T).softmax(dim=-1)
 
-    print("Label probs:", text_probs)  # prints: [[1., 0., 0.]]
+    print("Label probs:", text_probs.tolist())  # prints: [[1., 0., 0.]]
 
 
 def compareCLip(img_path, onnx_path, har_path, cHar_path, qHar_path, inputSize, postprocess_json, model, text):
@@ -373,7 +389,7 @@ def compareCLip(img_path, onnx_path, har_path, cHar_path, qHar_path, inputSize, 
 
         text_probs = (100.0 * image_features @ text_features.T).softmax(dim=-1)
 
-    print("Label probs:", text_probs)  # prints: [[1., 0., 0.]]
+    print("Label probs:", text_probs.tolist())  # prints: [[1., 0., 0.]]
 
     print("\n=== CLIP HAR Compiled ===")
     with torch.no_grad():
@@ -384,7 +400,7 @@ def compareCLip(img_path, onnx_path, har_path, cHar_path, qHar_path, inputSize, 
 
         text_probs = (100.0 * image_features @ text_features.T).softmax(dim=-1)
 
-    print("Label probs:", text_probs)  # prints: [[1., 0., 0.]]
+    print("Label probs:", text_probs.tolist())  # prints: [[1., 0., 0.]]
 
     print("\n=== CLIP HAR Quantized ===")
     with torch.no_grad():
@@ -396,15 +412,17 @@ def compareCLip(img_path, onnx_path, har_path, cHar_path, qHar_path, inputSize, 
 
         text_probs = (100.0 * image_features @ text_features.T).softmax(dim=-1)
 
-    print("Label probs:", text_probs)  # prints: [[1., 0., 0.]]
+    print("Label probs:", text_probs.tolist())  # prints: [[1., 0., 0.]]
 
 
 if __name__ == "__main__":
     device = "cuda" if torch.cuda.is_available() else "cpu"
     classes = ["a Human", "a cat", "a dog", "a white cat", "a small dog"]
-
+    classes = ["construction site", "town", "city",
+              "country side", "alley", "parking lot", "forest"]
     # TinyClip
     testImage = "models/temp/images.jpeg"
+    testImage = "temp/panorama_00002_0014_2.jpg"
     modelMod_path = "models/modified/modified_TinyCLIP-ResNet-19M_simplified.onnx"
     model_path = "models/baseAndSimple/TinyCLIP-ResNet-19M_simplified.onnx"
     model_har_path = "models/Harfiles/TinyCLIP-ResNet-19M_hailo_model.har"

@@ -1,6 +1,5 @@
 
-from Evaluation_utils import get_max_class_with_threshold2, get_pred2, get_throughput, get_trueClass, find_majority_element, printAndSaveHeatmap, get_modelnames
-
+from Evaluation_utils import get_max_class_with_threshold, get_pred2, get_throughput2, get_trueClass, find_majority_element, printAndSaveHeatmap, get_modelnames, get_throughput_image2,printAndSaveClassReport,printClassificationReport
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from torcheval.metrics import Throughput
 import torchvision.transforms as T
@@ -14,6 +13,7 @@ from tqdm import tqdm
 from collections import Counter
 from sklearn.preprocessing import LabelEncoder
 import os
+
 import sys
 import time
 import matplotlib.pyplot as plt
@@ -23,20 +23,28 @@ import seaborn as sns
 from PIL import Image, ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
+cwd = os.getcwd()
+newPath = cwd + "/python"
+print(newPath)
+sys.path.append(newPath)
+import folderManagment.pathsToFolders as ptf  # Controlls all paths
 
 # Own modules
 sys.path.append("/home/lukasschoepf/Documents/ProjWork1_DFC")
-import folderManagment.pathsToFolders as ptf  # Controlls all paths
+
 
 def main(evalFodler, datafolder, use5Scentens=False):
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    # From Lia
     # define text prompts
-    names2 = ["architectural", "office", "residential", "school", "manufacturing",
-              "cellar", "laboratory", "construction site", "mining", "tunnel"]
-    names3 = ["construction site", "town", "city",
-              "country side", "alley", "parking lot", "forest"]
+    indoor_labels = ["furniture", "carpet", "ceiling", "appliances", "lighting"]
+    outdoor_labels = ["sky", "grass", "trees", "horizon", "clouds"]
+    
+    construction_in_labels = ["scaffolding", "wiring", "drywall", "plumbing", "fixtures"]
+    architectural_labels = ["pillars", "facade", "cornice", "vault", "domes"]
+    construction_out_labels = ["excavator", "blueprints", "rebar", "hardhat", "bulldozer"]
+    urban_labels = ["billboards", "sidewalks", "crosswalk", "subway", "alleys"]
+    forest_labels = ["underbrush", "wildflowers", "mushrooms", "forrest", "streams"]
 
     # 5 sentences to use as text prompt
     prompts = [
@@ -46,8 +54,15 @@ def main(evalFodler, datafolder, use5Scentens=False):
         "a {} scene.",
         "a picture showing a scene of a {}."
     ]
-    sent2 = [prompt.format(label) for label in names2 for prompt in prompts]
-    sent3 = [prompt.format(label) for label in names3 for prompt in prompts]
+    
+    indoor_sent = [prompt.format(label) for label in indoor_labels for prompt in prompts]
+    outdoor_sent = [prompt.format(label) for label in outdoor_labels for prompt in prompts]
+    
+    construction_in_sent = [prompt.format(label) for label in construction_in_labels for prompt in prompts]
+    architectural_sent  = [prompt.format(label) for label in architectural_labels for prompt in prompts]
+    construction_out_sent  = [prompt.format(label) for label in construction_out_labels for prompt in prompts]
+    urban_sent = [prompt.format(label) for label in urban_labels for prompt in prompts]
+    forest_sent  = [prompt.format(label) for label in forest_labels for prompt in prompts]
 
     print("Clip Models:", clip.available_models())
 
@@ -75,31 +90,57 @@ def main(evalFodler, datafolder, use5Scentens=False):
 
                 # tokenize text prompts
                 openClipTokenizer = open_clip.get_tokenizer(modelname)
-                text1 = openClipTokenizer(["indoor", "outdoor"]).to(device)
                 if use5Scentens:
-                    text2 = openClipTokenizer(sent2).to(device)
-                    text3 = openClipTokenizer(sent3).to(device)
+                    indoor_text = openClipTokenizer(indoor_sent).to(device)
+                    outdoor_text = openClipTokenizer(outdoor_sent).to(device)
+                    construction_in_text = openClipTokenizer(construction_in_sent).to(device)
+                    architectural_text  = openClipTokenizer(architectural_sent).to(device)
+                    construction_out_text  = openClipTokenizer(construction_out_sent).to(device)
+                    urban_text = openClipTokenizer(urban_sent).to(device)
+                    forrest_text  = openClipTokenizer(forest_sent).to(device)
 
                 else:
-                    text2 = openClipTokenizer(names2).to(device)
-                    text3 = openClipTokenizer(names3).to(device)
+                    indoor_text = openClipTokenizer(indoor_labels).to(device)
+                    outdoor_text = openClipTokenizer(outdoor_labels).to(device)
+                    construction_in_text = openClipTokenizer(construction_in_labels).to(device)
+                    architectural_text  = openClipTokenizer(architectural_labels).to(device)
+                    construction_out_text  = openClipTokenizer(construction_out_labels).to(device)
+                    urban_text = openClipTokenizer(urban_labels).to(device)
+                    forrest_text  = openClipTokenizer(forest_labels).to(device)
             except:
                 model, preprocess = clip.load(modelname, device=device)
                 # tokenize text prompts
-                text1 = clip.tokenize(["indoor", "outdoor"]).to(device)
                 if use5Scentens:
-                    text2 = clip.tokenize(sent2).to(device)
-                    text3 = clip.tokenize(sent3).to(device)
+                    indoor_text = clip.tokenize(indoor_sent).to(device)
+                    outdoor_text = clip.tokenize(outdoor_sent).to(device)
+                    construction_in_text = clip.tokenize(construction_in_sent).to(device)
+                    architectural_text  = clip.tokenize(architectural_sent).to(device)
+                    construction_out_text  = clip.tokenize(construction_out_sent).to(device)
+                    urban_text = clip.tokenize(urban_sent).to(device)
+                    forrest_text  = clip.tokenize(forest_sent).to(device)
                 else:
-                    text2 = clip.tokenize(names2).to(device)
-                    text3 = clip.tokenize(names3).to(device)
-            df_pred = get_pred2(datafolder, text1, text2, text3,
+                    indoor_text = clip.tokenize(indoor_labels).to(device)
+                    outdoor_text = clip.tokenize(outdoor_labels).to(device)
+                    construction_in_text = clip.tokenize(construction_in_labels).to(device)
+                    architectural_text  = clip.tokenize(architectural_labels).to(device)
+                    construction_out_text  = clip.tokenize(construction_out_labels).to(device)
+                    urban_text = clip.tokenize(urban_labels).to(device)
+                    forrest_text  = clip.tokenize(forest_labels).to(device)
+                    
+            df_pred = get_pred2(datafolder,
+                                indoor_text,
+                                outdoor_text,
+                                construction_in_text,
+                                architectural_text,
+                                construction_out_text,
+                                urban_text,
+                                forrest_text,
                                 preprocess, model, use5Scentens)
             df_pred.to_csv(csv_path_predictions, index=False)
             df_5patch = get_trueClass(pd.read_csv(csv_path_predictions))
         df = df_5patch.copy()
         df['y_predIO'] = df.apply(
-            get_max_class_with_threshold2, axis=1, threshold=0.5)
+            get_max_class_with_threshold, axis=1, threshold=0.8)
 
         # set the outdoor classes to 0 when the image was classified as indoor
         # set the indoor classes to 0 when the image was classified as outdoor
@@ -150,6 +191,12 @@ def main(evalFodler, datafolder, use5Scentens=False):
         print(f'Accuracy: {accuracy:.3f}')
 
         printAndSaveHeatmap(df, modelname, evalFodler, use5Scentens)
+        
+        # Classification Report (Bar plot)
+        classificationReport = printClassificationReport(df, modelname)
+        del classificationReport['accuracy'] # Else visualisation doesnt work
+        df_classReport = pd.DataFrame.from_dict(classificationReport,orient='index')
+        printAndSaveClassReport(classificationReport,modelname,evalFodler)
 
     # Parameter Evaluation
     df_perf_acc = pd.DataFrame(
@@ -188,7 +235,11 @@ def main(evalFodler, datafolder, use5Scentens=False):
     df_perf_acc["Accuracy"] = accuracy_models
 
     # Throughput evaluation
-    throughput_model = []
+    throughput_model_mean = []
+    throughput_model_std = []
+    throughput_model_mean_image = []
+    throughput_model_std_image = []
+    
     for i, modelname in enumerate(tqdm(resnetModels, position=0, desc="Params")):
         try:
             if os.path.exists(ptf.tinyClipModels / f"modelname"):
@@ -198,28 +249,83 @@ def main(evalFodler, datafolder, use5Scentens=False):
 
             # tokenize text prompts
             openClipTokenizer = open_clip.get_tokenizer(modelname)
-            text1 = openClipTokenizer(["indoor", "outdoor"]).to(device)
-            text2 = openClipTokenizer(names2).to(device)
-            text3 = openClipTokenizer(names3).to(device)
+            if use5Scentens:
+                indoor_text = openClipTokenizer(indoor_sent).to(device)
+                outdoor_text = openClipTokenizer(outdoor_sent).to(device)
+                construction_in_text = openClipTokenizer(construction_in_sent).to(device)
+                architectural_text  = openClipTokenizer(architectural_sent).to(device)
+                construction_out_text  = openClipTokenizer(construction_out_sent).to(device)
+                urban_text = openClipTokenizer(urban_sent).to(device)
+                forrest_text  = openClipTokenizer(forest_sent).to(device)
 
+            else:
+                indoor_text = openClipTokenizer(indoor_labels).to(device)
+                outdoor_text = openClipTokenizer(outdoor_labels).to(device)
+                construction_in_text = openClipTokenizer(construction_in_labels).to(device)
+                architectural_text  = openClipTokenizer(architectural_labels).to(device)
+                construction_out_text  = openClipTokenizer(construction_out_labels).to(device)
+                urban_text = openClipTokenizer(urban_labels).to(device)
+                forrest_text  = openClipTokenizer(forest_labels).to(device)
         except:
             model, preprocess = clip.load(modelname, device=device)
-
             # tokenize text prompts
-            text1 = clip.tokenize(["indoor", "outdoor"]).to(device)
-            text2 = clip.tokenize(names2).to(device)
-            text3 = clip.tokenize(names3).to(device)
-        throughput = get_throughput(
-            datafolder, text1, text2, text3, preprocess, model)
-        throughput_model.append(throughput)
-        print(throughput_model)
-    throughput_model = ['%.2f' % elem for elem in throughput_model]
-    df_perf_acc["Throughput (it/s)"] = throughput_model
+            if use5Scentens:
+                indoor_text = clip.tokenize(indoor_sent).to(device)
+                outdoor_text = clip.tokenize(outdoor_sent).to(device)
+                construction_in_text = clip.tokenize(construction_in_sent).to(device)
+                architectural_text  = clip.tokenize(architectural_sent).to(device)
+                construction_out_text  = clip.tokenize(construction_out_sent).to(device)
+                urban_text = clip.tokenize(urban_sent).to(device)
+                forrest_text  = clip.tokenize(forest_sent).to(device)
+            else:
+                indoor_text = clip.tokenize(indoor_labels).to(device)
+                outdoor_text = clip.tokenize(outdoor_labels).to(device)
+                construction_in_text = clip.tokenize(construction_in_labels).to(device)
+                architectural_text  = clip.tokenize(architectural_labels).to(device)
+                construction_out_text  = clip.tokenize(construction_out_labels).to(device)
+                urban_text = clip.tokenize(urban_labels).to(device)
+                forrest_text  = clip.tokenize(forest_labels).to(device)
+        throughput_mean,throughput_std = get_throughput2(
+            datafolder,
+            indoor_text,
+            outdoor_text,
+            construction_in_text,
+            architectural_text,
+            construction_out_text,
+            urban_text,
+            forrest_text,
+            preprocess, model, use5Scentens)
+        throughput_model_mean.append(throughput_mean)
+        throughput_model_std.append(throughput_std)
+        print(f"\nThrouputs: {throughput_model_mean}")
+        
+        throughput_mean_image,throughput_std_image = get_throughput_image2(
+            datafolder,
+            indoor_text,
+            outdoor_text,
+            construction_in_text,
+            architectural_text,
+            construction_out_text,
+            urban_text,
+            forrest_text,
+            preprocess, model, use5Scentens)
+        throughput_model_mean_image.append(throughput_mean_image)
+        throughput_model_std_image.append(throughput_std_image)
+        print(f"\nThrouputs Image: {throughput_model_mean_image}")
+
+    throughput_model_mean = ['%.2f' % elem for elem in throughput_model_mean]
+    throughput_model_mean_image = ['%.2f' % elem for elem in throughput_model_mean_image]
+    
+    df_perf_acc["Throughput (it/s)"] = throughput_model_mean
+    df_perf_acc["Throughput Image (it/s)"] = throughput_model_mean_image
+    df_perf_acc["Throughput std"] = throughput_model_std
+    df_perf_acc["Throughput Image std"] = throughput_model_std_image
+    
     df_perf_acc.to_csv(csv_path_perforemance, index=False)
 
 
 if __name__ == "__main__":
     use5Scentens = False
-    evalFodler = ptf.evaluationFolder25Patch
+    evalFodler = ptf.evaluationFolder2
     datafolder = ptf.Dataset5Patch
     main(evalFodler, datafolder, use5Scentens)
