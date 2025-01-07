@@ -16,6 +16,10 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 # Own modules
+cwd = os.getcwd()
+newPath = cwd + "/python"
+print(newPath)
+sys.path.append(newPath)
 import folderManagment.pathsToFolders as ptf  # Controlls all paths
 # preprocessing
 

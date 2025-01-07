@@ -10,10 +10,9 @@ from os import walk
 import time
 from tqdm import tqdm
 import random
-from pathlib import Path
 # Own modules
 import folderManagment.pathsToFolders as ptf  # Controlls all paths
-
+from random import sample
 # preprocessing
 from torchvision.transforms import Compose, Resize, CenterCrop, ToTensor, Normalize, PILToTensor
 import os
@@ -24,7 +23,7 @@ try:
 except ImportError:
     BICUBIC = Image.BICUBIC
 
-
+layer_to_convert = {"RN50":57,"RN50x4":88,"RN50x16":130,"RN50x64":109,"TinyCLIP-ResNet-19M":56,"TinyCLIP-ResNet-30M":56,}
 def _convert_image_to_rgb(image):
     return image.convert("RGB")
 
@@ -41,6 +40,13 @@ def transform(n_px):
         Normalize((0.48145466, 0.4578275, 0.40821073),
                   (0.26862954, 0.26130258, 0.27577711)),
     ])
+
+def createLayerScripts(x):
+            scriptList = []
+            for x in range(1,x):
+                scriptList.append(f'quantization_param(conv{x}, precision_mode=a16_w16)\n')
+                
+            return scriptList
 
 def getxImagesPerClass(dataFolder,x):
     """
@@ -124,8 +130,8 @@ def compileHARamdHEF(onnxList):
     chosen_hw_arch = "hailo8l"
 
     for modelPath in onnxList:
-        har_path = Path("models/HarHefCut")
-        hef_path = Path("models/HarHefCut")
+        har_path = ptf.har16Bit
+        hef_path = ptf.har16Bit
         runner = ClientRunner(hw_arch=chosen_hw_arch)
         onnx_model = onnx.load(modelPath)
         input_shape = [[d.dim_value for d in _input.type.tensor_type.shape.dim]
@@ -164,7 +170,8 @@ def compileHARamdHEF(onnxList):
         preprocess = transform(x_y_pixel)
         images_list = [img_name for img_name in os.listdir(
             input_folder) if os.path.splitext(img_name)[1] == ".jpg"]
-        images_list = images_list[0:1024]
+        images_list = sample(images_list,1024)
+        # images_list = images_list[0:2048]
         # images_list = getCalbirationData(input_folder,13)
         calib_dataset = np.zeros((len(images_list),  x_y_pixel, x_y_pixel, 3))
         if os.path.exists(f"Data/calibData{model_name}.npy"):
@@ -190,19 +197,27 @@ def compileHARamdHEF(onnxList):
 
         # Call Optimize to perform the optimization process
         runner.optimize_full_precision(calib_dataset)
-        #runner.optimize(calib_dataset)
-        # with runner.infer_context(InferenceContext.SDK_FP_OPTIMIZED) as ctx:
-        #     output = runner.infer(ctx, calib_dataset)
-        # Batch size is 8 by default
-        alls_lines = f"model_optimization_config(calibration, batch_size=16, calibset_size={len(images_list)})\n"
+        
+        
+            
+        convScript = createLayerScripts(layer_to_convert[model_name])
 
-        # Load the model script to ClientRunner so it will be considered on optimization
-        runner.load_model_script(alls_lines)
+        # Batch size is 8 by default
+        alls_lines = ['quantization_param(input_layer1, precision_mode=a16_w16)\n',
+                    'quantization_param({ew_add*}, precision_mode=a16_w16)\n',
+                    'quantization_param({avgpool*}, precision_mode=a16_w16)\n',
+                    'quantization_param({matmul*}, precision_mode=a16_w16)\n',
+                    #'quantization_param({conv*}, precision_mode=a16_w16)\n',
+                    #'quantization_param({format_conversion*}, precision_mode=a16_w16)\n',
+                    "model_optimization_flavor(optimization_level=2)\n",
+                    "model_optimization_config(calibration, batch_size=16, calibset_size=1024)\n",
+                    ]  # From tutorial
+
+        alls_lines.extend(convScript)
+
+        runner.load_model_script("".join(alls_lines))
 
         runner.optimize(calib_dataset)
-        # print("Run Inference")
-        # with runner.infer_context(InferenceContext.SDK_QUANTIZED) as ctx:
-        #     output = runner.infer(ctx, calib_dataset)
             
         # Save the result state to a Quantized HAR file
         quantized_model_har_path = str(
@@ -218,17 +233,20 @@ def compileHARamdHEF(onnxList):
 
         hef = runner.compile()
 
-        file_name = str(hef_path / f"{model_name}_16Bit.hef")
+        file_name = str(hef_path / f"{model_name}.hef")
         with open(file_name, "wb") as f:
             f.write(hef)
 
+        har_path = ptf.HarPath / f"{model_name}_compiled_model.har"
+        runner.save_har(har_path)
     print("Total Compilation Time:")
     print(f"{time.time() - start_time:.3} seconds")
 
 
 if __name__ == "__main__":
-    onnxFiles_path = getONNXList("/home/lukasschoepf/Documents/ProjWork1_DFC/models/modfiedcut")
-    # onnxFiles_path = [path for path in onnxFiles_path if "Tiny" in path]
+    onnxFiles_path = getONNXList("models/modified")
+    TinyFiles_path = [path for path in onnxFiles_path if "Tiny" in path]
+    [onnxFiles_path.remove(path) for path in TinyFiles_path]
     
-    print(f"Compile ONNX models:{onnxFiles_path}")
+    print(f"Compile ONNX models: {onnxFiles_path}")
     compileHARamdHEF(onnxFiles_path)

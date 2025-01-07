@@ -17,6 +17,7 @@ onnxFolder = modelsBasefolder / "baseAndSimple"
 compiledonnx_path = modelsBasefolder / "compiledOnnx"
 modifiedonnx_path = modelsBasefolder / "modified"
 EvaluationQuantized_path = dataBaseFolder / "Evaluation_Quantized"
+har16Bit = modelsBasefolder / "Har16Bit"
 tinyClipModels = Path("tinyClipModels")
 HarPath = Path("models/Harfiles")
 Hefpath = Path("models/Heffiles")

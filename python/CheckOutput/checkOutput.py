@@ -31,8 +31,8 @@ names3 = ["construction site", "town", "city",
 
 def main():
     
-    model_name = "RN101"
-    har = "models/Harfiles/CLIP_RN101_compiled_model.har"
+    model_name = "RN50"
+    har = "models/Harfiles/CLIP_RN50_compiled_model.har"
     input_folder = str(ptf.Dataset5Patch)
     try:
         openClipTokenizer = open_clip.get_tokenizer(model_name)
@@ -76,16 +76,16 @@ def main():
         df_hef = pd.read_pickle(df_path_HEF)
     else:
         df_hef = get_pred_HEF(input_folder = input_folder,
-                            textEmb_json = "models/textEmbeddings/textEmbeddings_RN101.json",
+                            textEmb_json = "models/textEmbeddings/textEmbeddings_RN50.json",
                             preprocess = preprocess,
-                            postProcess_onnx = "models/RestOfGraphONNX/RestOf_CLIP_RN101_simplified.onnx",
+                            postProcess_onnx = "models/RestOfGraphONNX/RestOf_CLIP_RN50_simplified.onnx",
                             har = har,
                             )
         # df_hef.to_csv(df_path_HEF)
         df_hef.to_pickle(df_path_HEF)
     
-    df_cpu =get_trueClass(df_cpu)
-    df_hef =get_trueClass(df_hef)
+    df_cpu = get_trueClass(df_cpu)
+    df_hef = get_trueClass(df_hef)
     
     df_cpu["HighestPorb"] = df_cpu.apply(getMaxIndexPerClass, axis=1)
     
@@ -144,7 +144,7 @@ def main():
     if os.path.exists(df_path_HEF):
         # df_hef = pd.read_csv(df_path_HEF)
         df_hef = pd.read_pickle(df_path_HEF)
-    plotstocheck = 6
+        
     f, axes = plt.subplots(plotstocheck, 1,figsize= (6,6))
     axes[0].set_title('HEF Quantized')
     for i in range(plotstocheck):
