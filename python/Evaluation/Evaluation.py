@@ -125,7 +125,7 @@ def main(evalFodler, datafolder, use5Scentens=False):
         y_test_s = []
         majority_pred = []
 
-        if "5patch" in str(datafolder):
+        if eval5patch == True:
             # iterate through the input array in chunks of 5
             for i in range(0, len(y_test), 5):
 
@@ -255,6 +255,7 @@ def main(evalFodler, datafolder, use5Scentens=False):
 
 if __name__ == "__main__":
     use5Scentens = True
-    evalFodler = ptf.evaluationFolder5Patch
+    eval5patch = True
+    evalFodler = ptf.evaluationFolder5Patchcombined
     datafolder = ptf.Dataset5Patch
     main(evalFodler, datafolder, use5Scentens)

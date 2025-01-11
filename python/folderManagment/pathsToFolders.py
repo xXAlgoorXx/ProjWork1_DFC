@@ -11,6 +11,7 @@ DatasetPanorama = HexagonDataFolder / "candolle_panorama"
 evalBaseFolder = Path("Data")
 evaluationFolder = evalBaseFolder / "Evaluation"
 evaluationFolder2 = evalBaseFolder / "Evaluation2"
+evaluationFolder5Patchcombined = evaluationFolder / "5Patchcombined"
 evaluationFolder5Patch = evaluationFolder / "5Patch"
 evaluationFolderPanorama = evaluationFolder / "Panorama"
 onnxFolder = modelsBasefolder / "baseAndSimple"

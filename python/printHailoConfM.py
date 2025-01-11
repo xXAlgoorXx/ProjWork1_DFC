@@ -1,15 +1,15 @@
 from Evaluation.Evaluation_utils import printAndSaveHeatmap,get_trueClass,get_max_class_with_threshold,find_majority_element
 import pandas as pd
 from pathlib import Path
-modelname = "RN50"
-csv_path_predictions = "Data/hailoConf"
-outputfolder = Path("Data/temp")
+modelname = "RN101"
+csv_path_predictions = "USBStick/Data/HailoCut/pred_RN101_5patches_5scentens.csv"
+outputfolder = Path("Data/hailoConf")
 
 df_5patch = get_trueClass(pd.read_csv(csv_path_predictions))
 df = df_5patch.copy()
 df['y_predIO'] = df.apply(
-    get_max_class_with_threshold, axis=1, threshold=0.8)
-
+    get_max_class_with_threshold, axis=1, threshold=0.4)
+# InOutTh_dict = {'RN50':0.63, 'RN50x4':0.52, 'TinyClip19M':0.51, 'RN101':0.78, 'TinyClip30M':0.72,'TinyClip19M16Bit':0.45}
 # set the outdoor classes to 0 when the image was classified as indoor
 # set the indoor classes to 0 when the image was classified as outdoor
 df.loc[df['y_predIO'] == 'In', [

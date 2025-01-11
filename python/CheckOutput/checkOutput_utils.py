@@ -19,36 +19,30 @@ from pathlib import Path
 from hailo_sdk_client import ClientRunner, InferenceContext
 import onnxruntime as ort
 from ast import literal_eval
+import onnx
 
 class RestOfGraphOnnx:
     """
-    GemmLayer which got cut off
+    Graph which got cut off
     """
-
-    def __init__(self, onnx_path):
+    def __init__(self,onnx_path):
         self.session = ort.InferenceSession(onnx_path)
+        model = onnx.load(onnx_path)
+        output =[node.name for node in model.graph.output]
 
-    def __call__(self, input):
-        # input = np.array(list(input.values())[0]).squeeze()
-        if input.ndim == 1:
-            input = input[np.newaxis, :]
+        self.input_name = [node.name for node in model.graph.input][0]
         
-        if input.ndim >= 3 and input.shape[0] > 1:
-            
-            result = []
-            for inImage in input:
-                res = self.session.run(None, {"/attnpool/Reshape_7_output_0": inImage})
-                result.append(res)
-                
-            result = np.array(result).squeeze((1,2))
-        else:
-            if input.shape[0] ==1:
-                input = input.squeeze(0)
-            result = self.session.run(
-                None, {"/attnpool/Reshape_7_output_0": input})
-            result = np.array(result).squeeze(0)
+        print('Inputs: ', self.input_name)
+        
+    def __call__(self,input):
+        input = np.array(input).squeeze()
+        if input.ndim == 1:
+            input = input[np.newaxis,:]
+        elif input.ndim == 2:
+            input = input[:,np.newaxis,:]
+        result = self.session.run(None, {self.input_name: input})
+        result = np.array(result).squeeze(0)
         return result
-
     
 def loadJson(path):
     # Open and read the JSON file
