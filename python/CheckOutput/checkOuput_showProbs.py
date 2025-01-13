@@ -141,6 +141,19 @@ def main():
     plt.savefig("temp/"+ f"compareProbs_{model_name}", dpi = 600)
     plt.show()
     
+    hefprobs = np.load("temp/HEFprobs.npy")
+    f,axes = plt.subplots(2,1,figsize = (6,3))
+    axes[0].bar(outlabels,probs_quant[0])
+    axes[0].set_ylim([0,1])
+    axes[0].set_title("Quantized")
+    
+    axes[1].bar(outlabels,hefprobs[0])
+    axes[1].set_ylim([0,1])
+    axes[1].set_title("HEF")
+    f.tight_layout()
+    plt.savefig("temp/"+ f"compareProbs_{model_name}_quant_Hef", dpi = 600)
+    plt.show()
+    
     
 if __name__ == "__main__":
     main()

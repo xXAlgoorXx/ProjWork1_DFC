@@ -1,6 +1,6 @@
 
 from Evaluation_utils import get_max_class_with_threshold, get_pred2, get_throughput2, get_trueClass, find_majority_element, printAndSaveHeatmap, get_modelnames, get_throughput_image2,printAndSaveClassReport,printClassificationReport
-from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from sklearn.metrics import accuracy_score, balanced_accuracy_score
 from torcheval.metrics import Throughput
 import torchvision.transforms as T
 import torchvision
@@ -32,6 +32,9 @@ import folderManagment.pathsToFolders as ptf  # Controlls all paths
 # Own modules
 sys.path.append("/home/lukasschoepf/Documents/ProjWork1_DFC")
 
+"""
+Uses different text embeddings
+"""
 
 def main(evalFodler, datafolder, use5Scentens=False):
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -68,6 +71,7 @@ def main(evalFodler, datafolder, use5Scentens=False):
 
     resnetModels = get_modelnames()
     accuracy_models = []
+    balanced_accuracy_models = []
     for modelname in tqdm(resnetModels, position=0, desc="Models"):
 
         # Path to csv
@@ -184,10 +188,14 @@ def main(evalFodler, datafolder, use5Scentens=False):
             IO_pred = [replacements.get(item, item) for item in majority_pred]
             IO_true = [replacements.get(item, item) for item in y_test_s]
 
-            accuracy = accuracy_score(IO_true, IO_pred)
+            # accuracy = accuracy_score(IO_true, IO_pred)
+            # balanced_accuracy = balanced_accuracy_score(IO_true, IO_pred)
+            accuracy = accuracy_score(y_test_s, majority_pred)
+            balanced_accuracy = balanced_accuracy_score(y_test_s, majority_pred)
         else:
             accuracy = accuracy_score(y_test, y_pred)
         accuracy_models.append(accuracy)
+        balanced_accuracy_models.append(balanced_accuracy)
         print(f'Accuracy: {accuracy:.3f}')
 
         printAndSaveHeatmap(df, modelname, evalFodler, use5Scentens)
@@ -233,7 +241,8 @@ def main(evalFodler, datafolder, use5Scentens=False):
         }, ignore_index=True)
     accuracy_models = ['%.3f' % elem for elem in accuracy_models]
     df_perf_acc["Accuracy"] = accuracy_models
-
+    balanced_accuracy_models = ['%.3f' % elem for elem in balanced_accuracy_models]
+    df_perf_acc["Balanced accuracy"] = balanced_accuracy_models
     # Throughput evaluation
     throughput_model_mean = []
     throughput_model_std = []
