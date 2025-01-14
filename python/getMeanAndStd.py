@@ -4,6 +4,8 @@ from PIL import Image
 from folderManagment import pathsToFolders as ptf
 from tqdm import tqdm
 
+# Calculate mean and std for a folder of images
+
 def calculate_mean_std(image_folder):
     """
     Calculate the mean and standard deviation of images in a folder using a rolling approach.

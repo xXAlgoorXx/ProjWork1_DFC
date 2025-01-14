@@ -10,6 +10,8 @@ import re
 import json
 import folderManagment.pathsToFolders as ptf
 
+# Get ONNX files and weights of the rest of the Graph
+# ONNX files have to be cut with the ONNX modifier
 
 def simplify_onnx_model(onnx_path):
     """

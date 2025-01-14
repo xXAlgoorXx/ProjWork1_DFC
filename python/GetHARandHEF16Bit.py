@@ -23,6 +23,10 @@ try:
 except ImportError:
     BICUBIC = Image.BICUBIC
 
+# Get HEF and HAR for all onnx models given in a directory
+# Wasnt executed due to time constraints
+
+
 layer_to_convert = {"RN50":57,"RN50x4":88,"RN50x16":130,"RN50x64":109,"TinyCLIP-ResNet-19M":56,"TinyCLIP-ResNet-30M":56,}
 def _convert_image_to_rgb(image):
     return image.convert("RGB")

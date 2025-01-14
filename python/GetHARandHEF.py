@@ -24,6 +24,7 @@ try:
 except ImportError:
     BICUBIC = Image.BICUBIC
 
+# Get HEF and HAR for all onnx models given in a directory
 
 def _convert_image_to_rgb(image):
     return image.convert("RGB")

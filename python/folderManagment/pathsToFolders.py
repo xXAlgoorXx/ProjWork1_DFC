@@ -1,6 +1,10 @@
 import os
 from pathlib import Path
 
+"""
+Manages the location of folders
+"""
+
 # Data folders
 dataBaseFolder = Path("../Data")
 modelsBasefolder = Path("models")

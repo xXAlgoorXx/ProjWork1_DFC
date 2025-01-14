@@ -15,6 +15,10 @@ import seaborn as sns
 import clip
 import open_clip
 from pathlib import Path
+"""
+Utils for evaluation
+"""
+
 
 class ThroughputMetric:
     def __init__(self):

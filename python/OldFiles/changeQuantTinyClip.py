@@ -1,3 +1,6 @@
+
+
+
 # import the ClientRunner class from the hailo_sdk_client package
 from hailo_sdk_client import ClientRunner
 import onnx

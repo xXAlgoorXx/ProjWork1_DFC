@@ -24,6 +24,7 @@ from torcheval.metrics import Throughput
 # Own modules
 sys.path.append("/home/lukasschoepf/Documents/ProjWork1_DFC")
 
+# Get text embeddings in form of JSON files
 
 def saveAsJson(dict, path, name):
     # Serializing json
@@ -38,12 +39,7 @@ def saveAsJson(dict, path, name):
 
 
 def getTextembeddings(model, text, tokens):
-    # embeddedTextDict ={}
-    # for disc,token in zip(text,tokens):
-    #     text_features = model.encode_text(token)
-    #     embeddedTextDict[disc] = text_features
-    # return embeddedTextDict
-    embeddedTextDict = {}
+
     model.eval()
     with torch.no_grad():
         text_features = model.encode_text(tokens)

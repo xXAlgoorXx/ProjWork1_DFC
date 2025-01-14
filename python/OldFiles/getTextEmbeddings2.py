@@ -24,6 +24,7 @@ from torcheval.metrics import Throughput
 # Own modules
 sys.path.append("/home/lukasschoepf/Documents/ProjWork1_DFC")
 
+# Get text embeddings for new text prompts
 
 def saveAsJson(dict, path, name):
     # Serializing json

@@ -32,6 +32,9 @@ import folderManagment.pathsToFolders as ptf  # Controlls all paths
 # Own modules
 sys.path.append("/home/lukasschoepf/Documents/ProjWork1_DFC")
 
+"""
+Evalution of CLIP and TinyCLIP based in Lia's work
+"""
 
 def main(evalFodler, datafolder, use5Scentens=False):
     device = "cuda" if torch.cuda.is_available() else "cpu"

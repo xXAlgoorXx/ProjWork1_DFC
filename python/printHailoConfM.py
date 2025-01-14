@@ -1,6 +1,9 @@
 from Evaluation.Evaluation_utils import printAndSaveHeatmap,get_trueClass,get_max_class_with_threshold,find_majority_element
 import pandas as pd
 from pathlib import Path
+
+# Print Hailo confusion matrix with correct font
+
 modelname = "RN101"
 csv_path_predictions = "USBStick/Data/HailoCut/pred_RN101_5patches_5scentens.csv"
 outputfolder = Path("Data/hailoConf")

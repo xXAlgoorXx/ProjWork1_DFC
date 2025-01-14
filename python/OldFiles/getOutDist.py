@@ -5,6 +5,9 @@ import scipy.stats as stats
 from folderManagment import pathsToFolders as ptf
 import seaborn as sns
 
+# Print output distribution in form of a gaussian distribution.
+# The fact the the distribution can be something other than gaussian.
+
 def printOutputDistGauss(df_path,outputfolder):
     classes = ["In_Arch","In_Constr","Out_Constr","Out_Urban","Forest"]
     figname = df_path.split("/")[-1].split(".")[0]
@@ -59,6 +62,7 @@ def printOutputDistHist(df_path,outputfolder):
     plt.grid(True)
     plt.legend(loc='upper right')
     plt.savefig(outputfolder + "/" +  figname, dpi=600, bbox_inches='tight')
+    plt.show()
     plt.clf()
 
 if __name__ == "__main__":

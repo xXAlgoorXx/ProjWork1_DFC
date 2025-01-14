@@ -15,7 +15,10 @@ from onnxsim import simplify
 from PIL import Image
 from splitCompilation_utils import CompilerHelper
 
-
+"""
+Attemp to use 2 HEF files on Hailo.
+Doesnt work without major speed reduction.
+"""
 # Own modules
 print(Path.cwd())
 sys.path.append(str(Path.cwd()))

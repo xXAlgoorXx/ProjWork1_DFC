@@ -33,6 +33,7 @@ import folderManagment.pathsToFolders as ptf  # Controlls all paths
 sys.path.append("/home/lukasschoepf/Documents/ProjWork1_DFC")
 
 """
+Evalution of CLIP and TinyCLIP based in Lia's work
 Uses different text embeddings
 """
 
