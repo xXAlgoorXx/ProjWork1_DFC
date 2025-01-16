@@ -8,7 +8,8 @@ src folder, requirements-training.txt and setup.py for openClip to use TinyCLIP
 
 Version: 3.29.0
 
-### Profiler 
+### Profiler
+
 To run hailo profiler for har files use:
 ```bash
 hailo profiler network.har
